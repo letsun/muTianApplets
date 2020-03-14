@@ -1,0 +1,57 @@
+/* download/orderList/orderList.wxss */
+
+.con{
+    padding: 30rpx;
+}
+
+.con-item {
+    border-radius: 10rpx;
+    box-shadow: 0px 0px 15rpx 5rpx #eee;
+    margin: 40rpx 0;
+}
+
+.con-item:first-child {
+    margin: 0;
+}
+
+.con-item-title {
+    display: flex;
+    border-bottom: 1rpx solid #eee;
+    padding: 20rpx 30rpx;
+}
+
+.order-time {
+    width: 70%;
+    color: #999;
+}
+
+.order-status {
+    width: 30%;
+    text-align: right;
+    color: #666;
+}
+
+.statusColor {
+    color: red;
+}
+
+.con-item-con {
+    padding: 20rpx 30rpx;  
+}
+
+.con-item-con-item {
+    display: flex;
+    line-height: 50rpx;
+}
+
+
+.con-item-con-key {
+    width: 50%;
+    color: #999;
+}
+
+.con-item-con-value {
+    width: 50%;
+    text-align: right;
+    color: #666;
+}

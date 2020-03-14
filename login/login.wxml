@@ -1,0 +1,20 @@
+<!-- login/login.wxml -->
+<view class="container">
+  <form bindsubmit="login">
+    <view class="header">
+      <image class="header-logo" src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_1.png" />
+      <image class="header-bg" src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_2.png" />
+    </view>
+    <view class="from">
+      <view class="from-inp">
+        <image class="" src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_3.png" />
+        <input type="text" placeholder="请输入手机号码" placeholder-class="input-placeholder" />
+      </view>
+      <view class="from-inp">
+        <image class="" src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_3.png" />
+        <input type="text" placeholder="请输入手机号码" placeholder-class="input-placeholder" />
+      </view>
+    </view>
+    <button class="login" form-type="submit">提交</button>
+  </form>
+</view>

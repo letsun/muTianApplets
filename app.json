@@ -1,6 +1,17 @@
 {
   "pages": [
-    "index/index"
+    "login/login",
+    "home/home/home",
+    "home/productDetail/productDetail",
+    "home/downloadCenter/downloadCenter",
+    "home/downloadList/downloadList",
+    "home/downloadDetail/downloadDetail",
+    "home/downloadPc/downloadPc",
+    "home/more/more",
+    "download/downloadList/downloadList",
+    "download/download/download",
+    "download/orderList/orderList",
+    "download/member/member"
   ],
   "window": {
     "backgroundTextStyle": "light",

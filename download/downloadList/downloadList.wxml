@@ -1,0 +1,24 @@
+<!-- download/downloadList/downloadList.wxml -->
+<view class="container">
+    <view class="span"></view>
+    <view class="con">
+        
+        <view class="con-item">
+            <view class="con-item-left color">A</view>
+            <view class="con-item-right">
+                <view class="con-item-right-text">江门糖厂</view>
+                <view class="con-item-right-text">江门糖厂</view>
+                <view class="con-item-right-text">江门糖厂</view>
+                <view class="con-item-right-text">江门糖厂</view>
+            </view>
+        </view>
+
+
+        <view class="con-item">
+            <view class="con-item-left">B</view>
+            <view class="con-item-right">
+                <view class="con-item-right-text">江门糖厂</view>
+            </view>
+        </view>
+    </view>
+</view>

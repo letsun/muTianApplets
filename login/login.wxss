@@ -1,0 +1,57 @@
+/* login/login.wxss */
+
+.header {
+    position: relative;
+}
+
+.header-bg {
+    width: 100%;
+}
+
+.header-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 180rpx;
+    max-height: 219rpx;
+}
+
+.from {
+    padding: 50rpx 80rpx;
+}
+
+.from-inp {
+    display: flex;
+    padding: 50rpx 0 10rpx 0;
+    border-bottom: 1rpx solid #d9d9d9;
+}
+
+.from-inp image {
+    width: 36rpx;
+    height: 40rpx;
+    margin: auto;
+    padding-left: 20rpx;
+}
+
+.from-inp input {
+    width: 100%;
+    padding-left: 30rpx;
+    /* font-size: 24rpx; */
+    padding: 10rpx 0 10rpx 30rpx;
+}
+
+.login { 
+    width: 550rpx!important;
+    margin: auto;
+    margin-top: 50rpx;
+    padding: 20rpx;
+    text-align: center;
+    font-size: 34rpx;
+    letter-spacing: 20rpx;
+    border-radius: 50rpx;
+    line-height: 40rpx;
+    
+    background: linear-gradient(#FFA33B,#FF9025,#FF7280);
+    color: #f4f4f4;
+}

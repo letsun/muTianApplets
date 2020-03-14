@@ -1,0 +1,37 @@
+<!-- home/downloadList/downloadList.wxml -->
+<view class="container">
+  <view class="header">
+    已选信息
+    <span>(共3份)</span>
+  </view>
+  <view class="list">
+    <view class="list-item">
+      <view class="list-item-left">企业三证信息</view>
+      <view class="list-item-middle">￥40.00</view>
+
+      <view class="list-item-right">
+        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_28.png" />
+      </view>
+    </view>
+
+    <view class="list-item">
+      <view class="list-item-left">企业三证信息</view>
+      <view class="list-item-middle">￥40.00</view>
+      <view class="list-item-right">
+        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_28.png" />
+      </view>
+    </view>
+  </view>
+  <view class="tfooter"></view>
+  <view class="footer">
+    <view class="footer-total">
+      <view class="footer-total-texta">合</view>
+      计:
+      <view class="footer-total-textb">￥</view>
+      <view class="footer-total-textc">60.00</view>
+    </view>
+
+    <!--点击拉起微信支付  -->
+    <view class="footer-godow" catchtap="ispay">确认下载</view>
+  </view>
+</view>

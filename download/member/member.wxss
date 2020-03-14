@@ -1,0 +1,134 @@
+/* download/member/member.wxss */
+.title {
+    line-height: 70rpx;
+    text-align: center;
+    background: #FAF7F2;
+    color: #BB925A;
+}
+
+.uinfo {
+    padding: 30rpx;
+    display: flex;
+    border-bottom: 10rpx #F9F9F9 solid;
+}
+
+.uinfo-photo {
+    width: 20%;
+    text-align: center;
+}
+
+.uinfo-photo image {
+    max-height: 100rpx;
+    max-width: 100rpx;
+    border-radius: 50%;
+}
+
+.uinfo-text {
+    width: 80%;
+    padding-left: 20rpx;
+}
+
+.uinfo-text-phone {
+    padding-top: 6rpx;
+    font-size: 36rpx;
+    color: #333;
+}
+
+.uinfo-text-text {
+    color: #999;
+
+}
+
+.uinfo-text-text image {
+    width: 29rpx;
+    height: 24rpx;
+    vertical-align: middle;
+}
+
+.con {
+    padding: 80rpx 40rpx;
+    display: flex;
+    justify-content: center;
+
+}
+
+.con-item {
+    position: relative;
+    height: 250rpx;
+    width: 200rpx;
+    border-radius: 10rpx;
+    text-align: center;
+    font-weight: bold;
+    margin-right: 40rpx;
+    border: 1rpx solid #ddd;
+    color: #BC935B;
+}
+
+.con-item:last-child {
+    margin-right: 0;
+}
+
+.con-item-title {
+    font-size: 30rpx;
+    padding-top: 50rpx;
+}
+
+.con-item-money {
+    font-size: 30rpx;
+    padding-top: 40rpx;
+}
+
+.con-item-money span {
+    font-size: 40rpx;
+}
+
+.con-item-bg {
+    position: absolute;
+    right: 1rpx;
+    bottom: 1rpx;
+    background: url(https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_39.png) no-repeat;
+    background-size: 100% 100%;
+    height: 66rpx;
+    width: 91rpx;
+}
+
+.bg {
+    right: 1rpx;
+    bottom: 1rpx;
+    background: url(https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_38.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.border {
+    border: 1rpx solid #FF6B10;
+    box-shadow: 0rpx 0rpx 10rpx 0;
+}
+
+.con-item-remd {
+    position: absolute;
+    top: -10rpx;
+    left: -10rpx;
+    border-radius: 10rpx 0 10rpx 0;
+    font-size: 20rpx;
+    padding: 6rpx 10rpx;
+    background: #FA364A;
+    color: #f4f4f4;
+}
+
+.btn {
+    line-height: 90rpx;
+    width: 660rpx;
+    text-align: center;
+    margin: auto;
+    margin-top: 30rpx;
+    font-size: 34rpx;
+    border-radius: 60rpx;
+    letter-spacing: 2rpx;
+    font-weight: bold;
+    background: linear-gradient(#FFA33B, #FF9025, #FF7280);
+    color: #f4f4f4;
+}
+
+.btna {
+  margin-top: 280rpx;
+}

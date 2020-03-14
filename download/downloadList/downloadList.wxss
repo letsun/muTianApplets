@@ -1,0 +1,42 @@
+/* download/downloadList/downloadList.wxss */
+
+.span {
+    position: fixed;
+    top: 0;
+    left: 20%;
+    bottom: 0;
+   border: 1rpx solid #eee;
+}
+
+.con-item {
+    display: flex;
+}
+
+.con-item-left {
+    width: 20%;
+    line-height: 90rpx;
+    height: 90rpx;
+    text-align: center;
+    /* border-right: 1rpx solid #eee; */
+    color: #999;
+
+}
+
+.color {
+    background: #FF6B10;
+    color: #f4f4f4;
+}
+
+.con-item-right {
+    width: 80%;
+
+}
+
+.con-item-right-text {
+    padding: 10rpx 30rpx;
+    display: inline-block;
+    margin: 15rpx 0rpx 15rpx 20rpx;
+    border-radius: 10rpx;
+    border: 1rpx solid #FF6B10;
+    color: #FF6B10;
+}

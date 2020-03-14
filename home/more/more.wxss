@@ -1,0 +1,22 @@
+/* home/more/more.wxss */
+
+.con-item {
+  width: 25%;
+  text-align: center;
+}
+
+.con {
+  display: flex;
+  flex-flow: wrap;
+  padding:0 30rpx
+}
+
+.con-item {
+  padding: 20rpx 0;
+}
+.con-item image {
+  max-height: 108rpx;
+  max-width: 108rpx;
+  display: block;
+  margin: auto;
+}

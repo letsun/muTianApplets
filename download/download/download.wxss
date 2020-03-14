@@ -1,0 +1,226 @@
+/* download/download/download.wxss */
+
+.header {
+  background: url(https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_14.png) no-repeat;
+  background-size: 100% 100%;
+  height: 250rpx;
+  width: 750rpx;
+
+  display: flex;
+}
+
+.header-logo {
+  width: 20%;
+}
+
+.header-logo image{
+  width: 100rpx;
+  height: 100rpx;
+  margin: 30rpx;
+  border-radius: 50%;
+  border: 4rpx solid #fff;
+}
+
+.hader-middle {
+  width: 30%;
+  margin-top: 50rpx;
+  color: #fff;
+}
+
+.header-middle-name {
+  font-weight: bold;
+}
+
+
+.header-middle-text image {
+  max-width: 29rpx;
+  max-height: 24rpx;
+  vertical-align: middle;
+}
+
+.header-right {
+  width: 50%;
+  display: flex;
+  margin-top: 60rpx;
+  font-weight: bold;
+}
+
+.header-right-upgrade {
+  height: 50rpx;
+  line-height: 50rpx;
+  width: 150rpx;
+  text-align: center;
+  border-radius: 5rpx;
+  background: #fff;
+  color: #FF8C22; 
+}
+
+
+.header-right-cancellation {
+  height: 50rpx;
+  line-height: 50rpx;
+  width: 150rpx;
+  text-align: center;
+  margin-left: 30rpx;
+  border-radius: 5rpx;
+  border: 1rpx solid #fff;
+  /* background: #fff; */
+  color: #fff; 
+}
+
+.nav {
+  margin:-80rpx 30rpx 40rpx 30rpx;
+  padding:30rpx 20rpx;
+  border-radius: 10rpx;
+  box-shadow: 0px 0px 15rpx 0rpx  #e2e2e1;
+  background: #fff;
+}
+
+.nav-title {
+  display: flex;
+}
+
+.nav-title-left {
+  width: 80%;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.nav-title-left image{
+  max-height: 24rpx;
+  max-width: 24rpx;
+}
+
+.nav-title-right {
+  text-align: right;
+  margin: auto;
+  margin-right: 0;
+  color: #bbb;
+}
+
+.nav-con {
+  margin-top: 20rpx;
+  display: flex;
+}
+
+.nav-con-item {
+  text-align: center;
+  width: 25%;
+}
+
+.nav-con-item image {
+  max-height: 108rpx;
+  max-width: 108rpx;
+  display: block;
+  margin: auto;
+}
+
+.order {
+  padding: 0rpx 30rpx;
+}
+
+
+.order-title {
+  display: flex;
+}
+
+.order-title-left {
+  width: 80%;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.order-title-left image{
+  max-height: 25rpx;
+  max-width: 19rpx;
+}
+
+.order-title-right {
+  text-align: right;
+  margin: auto;
+  margin-right: 0;
+  color: #bbb;
+}
+
+
+.order-con {
+  padding-top: 30rpx;
+}
+
+.order-con-item {
+  display: flex;
+}
+
+.order-con-item:first-child {
+  font-weight: bold;
+}
+
+.order-con-item:nth-child(2n-1) {
+  background:#F4F4F4 ;
+}
+
+.order-con-item-text {
+  width: 25%;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+
+.color {
+  color:red;
+}
+
+
+
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 137rpx;
+  display: flex;
+  font-size: 30rpx;
+  font-weight: bold;
+
+  background: url(https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_7.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.footer-left {
+  width: 325rpx;
+  line-height: 177rpx;
+  text-align: center;
+  color: #bbb;
+}
+
+.footer-left image {
+  height: 33rpx;
+  width: 33rpx;
+  vertical-align: middle;
+  padding-bottom: 8rpx;
+}
+
+.footer-middle image {
+  height: 100rpx;
+  width: 100rpx;
+  margin-top: 26rpx;
+}
+
+.footer-right {
+  width: 325rpx;
+  line-height: 177rpx;
+  text-align: center;
+  
+}
+
+.footer-right image {
+  height: 31rpx;
+  width: 33rpx;
+  vertical-align: middle;
+}
+
+
+
+
+

@@ -1,0 +1,86 @@
+<!-- download/download/download.wxml -->
+<view class="container">
+  <view class="header">
+    <view class="header-logo">
+      <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_8.png" />
+    </view>
+    <view class="hader-middle">
+      <view class="header-middle-name">133****2611</view>
+      <view class="header-middle-text">
+        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_16.png" /> 普通会员
+      </view>
+    </view>
+    <view class="header-right">
+      <view class="header-right-upgrade" bindtap="member">会员升级</view>
+      <view class="header-right-cancellation">注销</view>
+    </view>
+  </view>
+  <view class="nav">
+    <view class="nav-title">
+      <view class="nav-title-left">
+        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_15.png" /> 最近下载塘企
+      </view>
+      <view class="nav-title-right" bindtap="downloadList">更多></view>
+    </view>
+    <view class="nav-con">
+      <view class="nav-con-item">
+        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_6.png" />
+        <text>孟连糖厂</text>
+      </view>
+      <view class="nav-con-item">
+        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_6.png" />
+        <text>孟连糖厂</text>
+      </view>
+      <view class="nav-con-item">
+        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_6.png" />
+        <text>孟连糖厂</text>
+      </view>
+      <view class="nav-con-item">
+        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_6.png" />
+        <text>孟连糖厂</text>
+      </view>
+    </view>
+  </view>
+  <view class="order">
+    <view class="order-title">
+      <view class="order-title-left">
+        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_17.png" /> 订单
+      </view>
+      <view class="order-title-right" bindtap="orderList" >更多></view>
+    </view>
+    <view class="order-con">
+      <view class="order-con-item">
+        <view class="order-con-item-text">下单时间</view>
+        <view class="order-con-item-text">金额</view>
+        <view class="order-con-item-text">订单内容</view>
+        <view class="order-con-item-text">状态</view>
+      </view>
+      <view class="order-con-item">
+        <view class="order-con-item-text">2019.12.16</view>
+        <view class="order-con-item-text">￥60.00</view>
+        <view class="order-con-item-text">三证</view>
+        <view class="order-con-item-text color">待支付</view>
+      </view>
+      <view class="order-con-item">
+        <view class="order-con-item-text">2019.12.16</view>
+        <view class="order-con-item-text">￥60.00</view>
+        <view class="order-con-item-text">三证</view>
+        <view class="order-con-item-text">已支付</view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="footer">
+    <view class="footer-left" bindtap="home">
+      <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_9.png" /> 首页
+    </view>
+    <view class="footer-middle" bindtap="scanCode">
+      <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_10.png" />
+    </view>
+
+    <view class="footer-right" bindtap="download">
+      <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_12.png" /> 下载记录
+    </view>
+  </view>
+</view>

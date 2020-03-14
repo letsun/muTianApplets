@@ -1,0 +1,89 @@
+/* home/downloadList/downloadList.wxss */
+
+.header {
+    line-height: 80rpx;
+    padding: 0 30rpx;
+    font-size: 30rpx;
+    background: #F7F7F7;
+    color: #666;
+}
+
+.header span {
+    margin-left: 10rpx;
+}
+
+
+
+.list-item {
+    display: flex;
+    padding: 30rpx;
+    border-bottom: 1rpx solid #ddd;
+}
+
+.list-item image {
+    width: 26rpx;
+    height: 28rpx;
+    margin-top: 5rpx;
+}
+
+.list-item-left {
+    width: 70%;
+}
+
+.list-item-middle{
+   width: 20%;
+   text-align: center;
+   margin-top: 2rpx;
+   color: #e21414;
+}
+
+.list-item-right {
+    width: 10%;
+    text-align: right;
+}
+
+
+.footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100rpx;
+    display: flex;
+    box-shadow: 0px 0px 20rpx 0rpx #e2e2e1;
+    background: #fff;
+    z-index: 20;
+}
+
+.footer-total {
+    width: 65%;
+    display: flex;
+    margin-top: 40rpx;
+}
+
+.footer-total-texta {
+    padding-right: 15rpx;
+    padding-left: 30rpx;
+}
+
+.footer-total-textb {
+    font-weight: bold;
+    color: #e21414;
+}
+
+.footer-total-textc {
+    font-weight: bold;
+    font-size: 45rpx;
+    margin-top: -15rpx;
+    color: #e21414;
+}
+
+.footer-godow {
+    width: 35%;
+    color: #f4f4f4;
+    font-size: 32rpx;
+    text-align: center;
+    line-height: 100rpx;
+    font-weight: bold;
+    background: #ff6b10;
+}

@@ -1,0 +1,149 @@
+/* home/productDetail/productDetail.wxss */
+
+.header {
+  max-width: 750rpx;
+  position: relative;
+  height: 500rpx;
+}
+
+.header-img {
+  width: 750rpx;
+  height: 410rpx;
+}
+
+.header-bg {
+  position: absolute;
+  bottom: 0rpx;
+  left: 0;
+  right: 0;
+  width: 750rpx;
+  height: 150rpx;
+  z-index: 0;
+}
+
+.header-download {
+  position: absolute;
+  bottom: 40rpx;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: 336rpx;
+  height: 108rpx;
+  margin: auto;
+}
+
+.proinfo {
+  padding: 0 30rpx 30rpx 30rpx;
+  margin-bottom: 30rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.proinfoa {
+  border: none;
+  margin-bottom: 0rpx;
+}
+
+.proinfo-titel {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.proinfo-titel image {
+  max-height: 24rpx;
+  max-width: 24rpx;
+}
+
+.proinfoa .proinfo-titel image {
+    max-height: 26rpx;
+    max-width: 23rpx; 
+}
+
+.proinfob .proinfo-titel image {
+  max-height: 25rpx;
+  max-width: 19rpx; 
+}
+
+.proinfo-text {
+  padding: 20rpx 30rpx;
+}
+
+.proinfo-text-item {
+  display: flex;
+  line-height: 50rpx;
+}
+
+.proinfo-text-item-key {
+  color: #aaa;
+}
+
+.proinfo-text-item-value {
+  color: #666;
+}
+
+.proinfo-con {
+  padding: 30rpx 30rpx 0 30rpx;
+  display: flex;
+}
+
+.proinfo-con-img  {
+  margin-right: 45rpx;
+  width: 180rpx;
+  height: 210rpx;
+}
+
+.proinfo-con-img  image{
+  max-width: 180rpx;
+  max-height: 210rpx;
+
+}
+
+.introduction {
+  color: #333;
+  padding: 0 30rpx 30rpx 30rpx;
+}
+
+.introduction-title {
+  text-align: center;
+  position: relative;
+  height: 30rpx;
+}
+
+.introduction-title-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 1;
+}
+
+.introduction-title-span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6rpx;
+  z-index: 0;
+  height: 8rpx;
+  width: 110rpx;
+  border-radius: 10rpx;
+  background: #fd6a20;
+  margin: auto;
+}
+
+.introduction-con {
+  padding-top: 30rpx;
+  color: #666;
+  font-size: 22rpx;
+  text-indent: 40rpx;
+}
+
+.scecode {
+  text-align: center;
+  font-size: 30rpx;
+  padding-bottom: 50rpx;
+}
+
+.scecode span{
+  color: #fd6a20;
+  padding: 0 10rpx;
+}
+

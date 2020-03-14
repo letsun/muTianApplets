@@ -1,0 +1,37 @@
+<!-- download/orderList/orderList.wxml -->
+<view class="container">
+    <view class="con">
+        <view class="con-item">
+            <view class="con-item-title">
+                <view class="order-time">下单时间:2020/02/02</view>
+                <view class="order-status">待支付</view>
+            </view>
+            <view class="con-item-con">
+                <view class="con-item-con-item">
+                    <view class="con-item-con-key">订单内容</view>
+                    <view class="con-item-con-value">三证/质检</view>
+                </view>
+                <view class="con-item-con-item">
+                    <view class="con-item-con-key">订单内容</view>
+                    <view class="con-item-con-value">三证/质检</view>
+                </view>
+            </view>
+        </view>
+        <view class="con-item">
+            <view class="con-item-title">
+                <view class="order-time">下单时间:2020/02/02</view>
+                <view class="order-status statusColor">待支付</view>
+            </view>
+            <view class="con-item-con">
+                <view class="con-item-con-item">
+                    <view class="con-item-con-key">订单内容：</view>
+                    <view class="con-item-con-value">三证/质检</view>
+                </view>
+                <view class="con-item-con-item">
+                    <view class="con-item-con-key">订单金额：</view>
+                    <view class="con-item-con-value">￥88</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

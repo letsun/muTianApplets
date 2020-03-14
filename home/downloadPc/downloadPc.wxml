@@ -1,0 +1,20 @@
+<!--home/downloadPc/downloadPc.wxml-->
+<view class="container">
+    <view class="header">
+        <input type="text" disabled="false" value="{{value}}" />    
+    </view> 
+    <view class="text">
+        <view class="text-btn" bindtap="copy">
+            复制到粘贴板
+        </view>
+        <view class="text-text">
+            长按链接复制或点击
+        </view>
+    </view>
+
+    <view class="vrtcode">
+
+        验证码：<view class="vrtcode-num">5478</view>
+    </view>
+    
+</view>

@@ -1,0 +1,38 @@
+<!--home/more/more.wxml-->
+
+<view class="container">
+  <view class="con">
+    <view class="con-item">
+      <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_6.png"></image>
+      <text>孟连糖厂</text>
+    </view>
+    <view class="con-item">
+      <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_6.png"></image>
+      <text>孟连糖厂</text>
+    </view>
+    <view class="con-item">
+      <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_6.png"></image>
+      <text>孟连糖厂</text>
+    </view>
+    <view class="con-item">
+      <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_6.png"></image>
+      <text>孟连糖厂</text>
+    </view>
+    <view class="con-item">
+      <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_6.png"></image>
+      <text>孟连糖厂</text>
+    </view>
+    <view class="con-item">
+      <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_6.png"></image>
+      <text>孟连糖厂</text>
+    </view>
+    <view class="con-item">
+      <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_6.png"></image>
+      <text>孟连糖厂</text>
+    </view>
+    <view class="con-item">
+      <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_6.png"></image>
+      <text>孟连糖厂</text>
+    </view>    
+  </view>
+</view>

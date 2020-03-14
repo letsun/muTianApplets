@@ -1,0 +1,90 @@
+<!-- home/downloadDetail/downloadDetail.wxml -->
+<view class="container">
+    <view class="info">
+        <view class="info-title">
+            <view class="info-title-left">
+                <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_23.png"></image>
+                企业三证信息
+            </view>
+            <view class="info-title-right">
+                <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_29.png"></image>
+            </view>
+        </view>
+        <view class="info-img">
+            <view class="info-img-item">
+                <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_30.png" />
+            </view>
+            <view class="info-img-item">
+                <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_30.png" />
+            </view>
+            <view class="info-img-item">
+                <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_30.png" />
+            </view>
+            <view class="info-img-item">
+                <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_30.png" />
+            </view>
+            <view class="info-img-item">
+                <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_30.png" />
+            </view>
+            <view class="info-img-item">
+                <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_30.png" />
+            </view>
+        </view>
+    </view>
+    <view class="report">
+        <view class="report-title">
+            <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_24.png"></image>
+            批次质检报告
+        </view>
+        <view class="report-con">
+            <view class="report-con-header">
+                <view class="report-con-header-left">生产批次</view>
+                <view class="report-con-header-right">质检报告</view>
+            </view>
+            <view class="report-con-con">
+                <view class="report-con-con-left">20191216-01-0104</view>
+                <view class="report-con-con-middel">
+                    <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_32.png"></image>
+                    查看
+                </view>
+                <view class="report-con-con-right">
+                    <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_33.png"></image>
+                    下载
+                </view>
+            </view>
+            <view class="report-con-con">
+                <view class="report-con-con-left">20191216-01-0104</view>
+                <view class="report-con-con-middel">
+                    <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_32.png"></image>
+                    查看
+                </view>
+                <view class="report-con-con-right">
+                    <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_33.png"></image>
+                    下载
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="tfooter"></view>
+    <view class="footer" bindtap="downbtn">
+        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_34.png" />
+    </view>
+
+    <!-- 弹窗 -->
+    <view class="mask" wx:if="{{mask}}">
+        <view class="mask-con">
+            <view class="mask-con-title">
+                提示  
+                <view class="mask-close" bindtap='closemask' ><image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_35.png" /></view>
+            </view>
+            <view class="mask-con-con">
+                请选择下载方式
+            </view>
+            <view class="mask-con-footer">
+                <view class="mask-btna">本地下载</view>
+                <view class="mask-btnb" bindtap="downloadPc" >电脑下载</view>
+            </view>
+        </view>
+    </view>
+</view>

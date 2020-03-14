@@ -1,0 +1,72 @@
+<!-- home/productDetail/productDetail.wxml -->
+<view class="container">
+    <view class="header">
+        <image class="header-img" src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_13.png" />
+        <image class="header-bg" src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_20.png"></image>
+        <image class="header-download" bindtap="downloadCenter" src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_19.png"></image>
+    </view>
+    <!-- 扫码进入显示 -->
+    <view class="scecode">
+        本质检二维码为第
+        <span>1</span>
+        次扫码
+    </view>
+    <!-- 已输入企业产品信息展示 -->
+    <view class="proinfo">
+        <view class="proinfo-titel">
+            <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_21.png"></image>
+            产品信息
+        </view>
+        <view class="proinfo-text">
+            <view class="proinfo-text-item">
+                <view class="proinfo-text-item-key">产品品牌：</view>
+                <view class="proinfo-text-item-value">龙血树(孟连)</view>
+            </view>
+            <view class="proinfo-text-item">
+                <view class="proinfo-text-item-key">产品品牌：</view>
+                <view class="proinfo-text-item-value">龙血树(孟连)</view>
+            </view>
+        </view>
+    </view>
+    <!-- 扫码展示 -->
+    <view class="proinfo proinfob">
+        <view class="proinfo-titel">
+            <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_17.png"></image>
+            质检报告
+        </view>
+        <view class="proinfo-con">
+            <view class="proinfo-con-img">
+                <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_31.png" />
+            </view>
+            <view class="proinfo-con-img">
+                <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_31.png" />
+            </view>
+            <view class="proinfo-con-img">
+                <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_31.png" />
+            </view>
+        </view>
+    </view>
+    <view class="proinfo proinfoa">
+        <view class="proinfo-titel">
+            <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_18.png"></image>
+            企业信息
+        </view>
+        <view class="proinfo-text">
+            <view class="proinfo-text-item">
+                <view class="proinfo-text-item-key">产品品牌：</view>
+                <view class="proinfo-text-item-value">龙血树(孟连)</view>
+            </view>
+            <view class="proinfo-text-item">
+                <view class="proinfo-text-item-key">产品品牌：</view>
+                <view class="proinfo-text-item-value">龙血树(孟连)</view>
+            </view>
+        </view>
+    </view>
+    <view class="introduction">
+        <view class="introduction-title">
+            <view class="introduction-title-text">企业介绍</view>
+            <view class="introduction-title-span"></view>
+        </view>
+        <view class="introduction-con">阿的说法是否据了解阿拉丁开房记录会计分录</view>
+    </view>
+</view>

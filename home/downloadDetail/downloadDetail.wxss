@@ -1,0 +1,198 @@
+/* home/downloadDetail/downloadDetail.wxss */
+.info {
+    border-bottom: 1rpx solid #eee;
+}
+
+.info-title {
+    display: flex;
+    padding: 30rpx;
+    font-weight: bold;
+    font-size: 30rpx;
+}
+
+.info-title-left {
+    width: 90%;
+}
+
+.info-title-left image {
+    width: 23rpx;
+    height: 25rpx;
+    vertical-align: middle;
+}
+
+.info-title-right {
+    width: 10%;
+    text-align: right;
+}
+
+.info-title-right image {
+    width: 27rpx;
+    height: 29rpx;
+    vertical-align: middle;
+}
+
+.info-img {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0rpx 30rpx 0rpx 30rpx;
+}
+
+.info-img image {
+    width: 200rpx;
+    height: 136rpx;
+}
+
+.info-img-item {
+    padding-left: 30rpx;
+    padding-bottom: 20rpx;
+}
+
+.report-title {
+    padding: 30rpx;
+    font-weight: bold;
+    font-size: 30rpx;
+}
+
+.report-title image {
+    width: 23rpx;
+    height: 27rpx;
+}
+
+.report-con {
+    padding: 0 30rpx;
+}
+
+.report-con-header {
+    display: flex;
+    background: #F6F6F6;
+    padding: 15rpx 0;
+}
+
+.report-con-header-left {
+    width: 60%;
+    padding-left: 80rpx;
+}
+
+.report-con-header-right {
+    width: 40%;
+    text-align: right;
+    padding-right: 80rpx;
+}
+
+.report-con-con {
+    padding: 15rpx 0;
+    display: flex;
+    border-bottom: 1rpx solid #eee;
+}
+.report-con-con:last-child {
+    border: none;
+}
+
+.report-con-con-left {
+    width: 60%;
+    padding-left: 30rpx;
+}
+
+.report-con-con-middel {
+    width: 20%;
+    text-align: center;
+    color: #FE6A00;
+}
+
+.report-con-con-middel image {
+    max-height: 24rpx;
+    max-width: 24rpx;
+}
+
+.report-con-con-right {
+    width: 20%;
+    text-align: center;
+    color: #FE6A00;
+}
+
+.report-con-con-right image {
+    max-height: 19rpx;
+    max-width: 23rpx;
+
+}
+
+.tfooter {
+    height: 100rpx;
+}
+
+.footer{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    line-height: 100rpx;
+    color: #f4f4f4;
+    background: #FF6B10;
+}
+
+.footer image {
+    width: 162rpx;
+    height: 30rpx;
+}
+.mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .6);    
+}
+
+.mask-con {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;   
+    height: 260rpx;
+    width: 520rpx;
+    border-radius: 15rpx;
+}
+
+.mask-con-title {
+    position: relative;
+    text-align: center;
+    line-height: 90rpx;
+    font-size: 30rpx;
+    font-weight: bold;
+}
+
+.mask-con-title image {
+    position: absolute;
+    right: 20rpx;
+    top: 20rpx;
+    width: 26rpx;
+    height: 21rpx;
+}
+
+.mask-con-con {
+    text-align: center;
+    line-height: 60rpx;
+}
+
+.mask-con-footer {
+    display: flex;
+    padding-top: 20rpx;
+}
+
+.mask-btna {
+    padding: 10rpx 40rpx;
+    border-radius: 10rpx;
+    border: 1rpx #FE6A10 solid;
+    color: #FE6A10; 
+    margin: 0 50rpx 0rpx 40rpx;
+}
+
+.mask-btnb {
+    padding: 10rpx 40rpx;
+    border-radius: 10rpx;
+    border: 1rpx #FE6A10 solid;
+    color: #FE6A10; 
+    margin:0 30rpx 0rpx 0rpx;
+}

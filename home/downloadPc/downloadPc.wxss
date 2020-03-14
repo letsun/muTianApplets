@@ -1,0 +1,46 @@
+/* home/downloadPc/downloadPc.wxss */
+
+.header {
+    padding: 30rpx;
+}
+
+.header input {
+    padding: 20rpx;
+
+    border-radius: 10rpx;
+    border: 1rpx solid #eee;
+    color: #666;
+}
+
+.text {
+    text-align: center;
+}
+
+.text-btn {
+    margin: auto;
+    display: inline-block;
+    text-align: center;
+    padding: 15rpx 30rpx;
+    font-size: 30rpx;
+    border-radius: 10rpx;
+    background: #FE6A00;
+    color: #f4f4f4;
+}
+
+.text-text {
+    color: #666;
+    font-size: 22rpx;
+}
+
+.vrtcode {
+    display: flex;
+    padding: 30rpx;
+    line-height: 70rpx;
+}
+
+.vrtcode-num {
+    padding: 0 30rpx;
+    border-radius: 10rpx;
+    border: 1rpx solid #eee;
+    color: #666;
+ }

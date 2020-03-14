@@ -1,0 +1,209 @@
+/* home/home/home.wxss */
+
+.swiper {
+  height: 350rpx;
+  width: 690rpx;
+  margin: auto;
+  border-radius: 15rpx;
+  box-shadow: 0px 6px 15rpx 0rpx #e2e2e1;
+}
+
+.swiper-item {
+  height: 350rpx;
+  width: 690rpx;
+  margin: auto;
+  border-radius: 15rpx;
+}
+
+.swiper-item image {
+  height: 350rpx;
+  width: 690rpx;
+}
+
+.swiper .wx-swiper-dot-active::before {
+  background: #df2c3f;
+}
+
+.swiper .wx-swiper-dot {
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+}
+
+.swiper .wx-swiper-dot.wx-swiper-dot-active {
+  width: 34rpx;
+  height: 12rpx;
+  border-radius: 8rpx;
+}
+
+.query {
+  padding: 50rpx 30rpx 30rpx 30rpx;
+}
+
+.query-title {
+  display: flex;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.query-title-text {
+  display: flex;
+  margin-right: 30rpx;
+}
+
+.box {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin: 0 10rpx 0 0rpx;
+  border: 1px solid #fe6a00;
+  background-image: repeating-radial-gradient(#fe6a00 0px, #fe6a00 10rpx, #fff 10rpx, #fff 20rpx);
+}
+
+.boxa {
+  width: 16px;
+  height: 16px;
+  margin: 0 10rpx 0 0rpx;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+}
+
+.color {
+  color: #bbb;
+}
+
+.query-pick {
+  display: flex;
+  margin-top: 20rpx;
+}
+
+.query-pick-item {
+  width: 330rpx;
+  padding: 15rpx;
+  margin-right: 30rpx;
+  border: 1rpx #eee solid;
+  color: #333;
+}
+
+.query-pick-item:last-child {
+  margin-right: 0;
+}
+
+.query-inp {
+  margin-top: 20rpx;
+}
+
+.query-inp input {
+  border: 1rpx solid #eee;
+  padding: 15rpx;
+}
+
+.query-btn {
+  margin: auto;
+  margin-top: 30rpx;
+  text-align: center;
+  width: 400rpx;
+  padding: 15rpx 0;
+  font-size: 32rpx;
+  letter-spacing: 10rpx;
+  border-radius: 50rpx;
+  color: #f4f4ff;
+  background: linear-gradient(#ffa33b, #ff9025, #ff7280);
+}
+
+.cooperation {
+  border-top: 10rpx solid #f4f4f4;
+}
+
+.cooperation-title {
+  padding: 30rpx;
+  display: flex;
+}
+
+.cooperation-title-left {
+  font-size: 30rpx;
+  font-weight: bold;
+  width: 85%;
+}
+
+.cooperation-title-left image {
+  height: 25rpx;
+  width: 25rpx;
+}
+
+.cooperation-title-right {
+  text-align: right;
+  width: 15%;
+  color: #bbb;
+  justify-content: right;
+}
+
+.cooperation-title-right image {
+  height: 25rpx;
+  width: 25rpx;
+}
+
+.cooperation-con {
+  padding: 0 30rpx;
+  color: #666;
+  display: flex;
+}
+
+.cooperation-con-item {
+  width: 25%;
+  text-align: center;
+}
+
+.cooperation-con-item image {
+  max-height: 108rpx;
+  max-width: 108rpx;
+  display: block;
+  margin: auto;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 137rpx;
+  display: flex;
+  font-size: 30rpx;
+  font-weight: bold;
+
+  background: url(https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_7.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.footer-left {
+  width: 325rpx;
+  line-height: 177rpx;
+  text-align: center;
+}
+
+.footer-left image {
+  height: 33rpx;
+  width: 33rpx;
+  vertical-align: middle;
+  padding-bottom: 8rpx;
+
+}
+
+.footer-middle image {
+  height: 100rpx;
+  width: 100rpx;
+  margin-top: 26rpx;
+}
+
+.footer-right {
+  width: 325rpx;
+  line-height: 177rpx;
+  text-align: center;
+  color: #bbb;
+}
+
+.footer-right image {
+  height: 31rpx;
+  width: 33rpx;
+  vertical-align: middle;
+}

@@ -1,0 +1,32 @@
+<!-- download/member/member.wxml -->
+<view class="container">
+    <view class="title">尊敬的133****6515会员,您现在是</view>
+    <view class="uinfo">
+        <view class="uinfo-photo">
+            <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_31.png" />
+        </view>
+        <view class="uinfo-text">
+            <view class="uinfo-text-phone">133****2615</view>
+            <view class="uinfo-text-text">
+                <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_16.png" />
+                <!-- <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_16-1.png" />
+                <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_16-2.png" />
+                <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_16-3.png" /> -->
+                普通会员
+            </view>
+        </view>
+    </view>
+    <view class="con">
+        <view class="con-item {{index==indexa?'border':''}}" bindtap="memberBtn" wx:for="{{datas}}" data-index="{{index}}" wx:key="xxx">
+            <view class="con-item-remd" wx:if="{{index==indexa}}">推荐</view>
+            <view class="con-item-bg {{index==indexa?'bg':''}}"></view>
+            <view class="con-item-title">{{item.member}}</view>
+            <view class="con-item-money">
+                ￥<span>{{item.money}}</span>
+            </view>
+        </view>
+    </view>
+
+    <view class="btn" wx:if="{{datas!=''&&datas!=undefined}}">立即升级</view>
+    <view class="btn btna" wx:else> 返回首页</view>
+</view>
