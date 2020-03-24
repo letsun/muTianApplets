@@ -1,24 +1,22 @@
 <!-- download/downloadList/downloadList.wxml -->
 <view class="container">
-    <view class="span"></view>
-    <view class="con">
-        
-        <view class="con-item">
-            <view class="con-item-left color">A</view>
-            <view class="con-item-right">
-                <view class="con-item-right-text">江门糖厂</view>
-                <view class="con-item-right-text">江门糖厂</view>
-                <view class="con-item-right-text">江门糖厂</view>
-                <view class="con-item-right-text">江门糖厂</view>
-            </view>
-        </view>
+  <view class="span"></view>
+  <view class="con">
+    <!-- <view class="con-item" wx:for="{{lista}}" wx:key='xxx'  >
+
+      <view class="con-item-left ">{{item.name}}</view>
+      <view class="con-item-right">
+        <view class="con-item-right-text"  wx:for="{{item.tq}}">{{item.name}}</view>
+      </view>
+    </view> -->
 
 
-        <view class="con-item">
-            <view class="con-item-left">B</view>
-            <view class="con-item-right">
-                <view class="con-item-right-text">江门糖厂</view>
-            </view>
-        </view>
+    <view class="con-item" wx:for="{{list}}"  wx:for-index="key" wx:for-item="value" wx:key='xxx'>
+      <!-- color -->
+      <view class="con-item-left {{key==index?'color':''}}" data-index="{{key}}"  bindtap="colorbtn"> {{key}}</view>
+      <view class="con-item-right">
+        <view class="con-item-right-text" wx:for="{{value}}" wx:key ="xxx" data-corpId="{{item.corpId}}" bindtap="btnNav">{{item.shortName}}</view>
+      </view>
     </view>
+  </view>
 </view>

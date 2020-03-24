@@ -5,14 +5,14 @@
       <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_8.png" />
     </view>
     <view class="hader-middle">
-      <view class="header-middle-name">133****2611</view>
+      <view class="header-middle-name">{{dowlist.mobile}}</view>
       <view class="header-middle-text">
-        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_16.png" /> 普通会员
+        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_16.png" /> {{dowlist.levelType}}
       </view>
     </view>
     <view class="header-right">
       <view class="header-right-upgrade" bindtap="member">会员升级</view>
-      <view class="header-right-cancellation">注销</view>
+      <view class="header-right-cancellation" bindtap="loginOut">注销</view>
     </view>
   </view>
   <view class="nav">
@@ -23,22 +23,11 @@
       <view class="nav-title-right" bindtap="downloadList">更多></view>
     </view>
     <view class="nav-con">
-      <view class="nav-con-item">
+      <view class="nav-con-item" wx:for="{{dowlist.corpList}}" wx:key="xxx" data-corpId="{{item.corpId}}" bindtap="btnNav">
         <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_6.png" />
-        <text>孟连糖厂</text>
+        <text>{{item.name}}</text>
       </view>
-      <view class="nav-con-item">
-        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_6.png" />
-        <text>孟连糖厂</text>
-      </view>
-      <view class="nav-con-item">
-        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_6.png" />
-        <text>孟连糖厂</text>
-      </view>
-      <view class="nav-con-item">
-        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_6.png" />
-        <text>孟连糖厂</text>
-      </view>
+
     </view>
   </view>
   <view class="order">
@@ -49,28 +38,23 @@
       <view class="order-title-right" bindtap="orderList" >更多></view>
     </view>
     <view class="order-con">
-      <view class="order-con-item">
+      <view class="order-con-item" >
         <view class="order-con-item-text">下单时间</view>
         <view class="order-con-item-text">金额</view>
         <view class="order-con-item-text">订单内容</view>
         <view class="order-con-item-text">状态</view>
       </view>
-      <view class="order-con-item">
-        <view class="order-con-item-text">2019.12.16</view>
-        <view class="order-con-item-text">￥60.00</view>
-        <view class="order-con-item-text">三证</view>
-        <view class="order-con-item-text color">待支付</view>
+      <view class="order-con-item" wx:for="{{dowlist.orderList}}" wx:key="xxx" data-index="{{index}}" bindtap="btn">
+        <view class="order-con-item-text">{{item.createDate}}</view>
+        <view class="order-con-item-text">￥{{item.totalPrice}}</view>
+        <view class="order-con-item-text">{{item.content}}</view>
+        <view class="order-con-item-text {{item.payStatus?0:'color'}}">{{item.payStatusLabel}}</view>
       </view>
-      <view class="order-con-item">
-        <view class="order-con-item-text">2019.12.16</view>
-        <view class="order-con-item-text">￥60.00</view>
-        <view class="order-con-item-text">三证</view>
-        <view class="order-con-item-text">已支付</view>
-      </view>
+
     </view>
   </view>
 
-
+  <view class="tfooter"></view>
   <view class="footer">
     <view class="footer-left" bindtap="home">
       <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_9.png" /> 首页

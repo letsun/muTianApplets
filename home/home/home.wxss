@@ -81,9 +81,19 @@
   width: 330rpx;
   padding: 15rpx;
   margin-right: 30rpx;
+  overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
   border: 1rpx #eee solid;
   color: #333;
 }
+/* 
+.query-pick-item picker{
+  width:280rpx;
+  overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+} */
 
 .query-pick-item:last-child {
   margin-right: 0;
@@ -157,6 +167,12 @@
 .cooperation-con-item image {
   max-height: 108rpx;
   max-width: 108rpx;
+  display: block;
+  margin: auto;
+}
+
+.cooperation-con-item text {
+  width: 150rpx;
   display: block;
   margin: auto;
 }

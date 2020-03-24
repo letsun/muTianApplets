@@ -1,5 +1,6 @@
 {
   "pages": [
+    "index/index",
     "login/login",
     "home/home/home",
     "home/productDetail/productDetail",
@@ -11,7 +12,8 @@
     "download/downloadList/downloadList",
     "download/download/download",
     "download/orderList/orderList",
-    "download/member/member"
+    "download/member/member",
+    "batchList/batchList"
   ],
   "window": {
     "backgroundTextStyle": "light",

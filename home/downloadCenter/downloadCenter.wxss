@@ -36,8 +36,11 @@
   border-radius: 8rpx;
 }
 
+.content {
+  padding-top: 20rpx;
+}
 .proinfo {
-  padding: 50rpx 30rpx 0 30rpx;
+  padding: 30rpx 30rpx 0 30rpx;
   border-bottom: 1rpx solid #eee;
   color: #666;
 }
@@ -58,7 +61,32 @@
   display: flex;
 }
 
-.box {
+.bo1 {
+  position: absolute;
+  right: 20rpx;
+  top: 32rpx;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin: 0 10rpx 0 0rpx;
+  border: 1px solid #ddd;
+}
+
+.bo2 {
+  position: absolute;
+  right: 20rpx;
+  top: 32rpx;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin: 0 10rpx 0 0rpx;
+  border: 1px solid #ddd;
+  background-image: repeating-radial-gradient(#ddd 0px, #ddd 10rpx, #fff 10rpx, #fff 20rpx);
+}
+
+
+
+.bo3 {
   position: absolute;
   right: 20rpx;
   top: 32rpx;
@@ -70,16 +98,7 @@
   background-image: repeating-radial-gradient(#fe6a00 0px, #fe6a00 10rpx, #fff 10rpx, #fff 20rpx);
 }
 
-.boxx {
-  position: absolute;
-  right: 20rpx;
-  top: 32rpx;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  margin: 0 10rpx 0 0rpx;
-  border: 1px solid #ddd;
-}
+
 
 .check {
   padding: 30rpx 30rpx 0 30rpx;
@@ -140,11 +159,11 @@
 }
 
 .check-con-header-item:first-child {
-  width: 40%;
+  width: 60%;
 }
 
 .check-con-header-item:nth-child(2) {
-  width: 30%;
+  width: 20%;
 }
 
 .check-con-con {
@@ -161,19 +180,41 @@
 }
 
 .check-con-con-item:first-child {
-  width: 40%;
+  width: 60%;
 }
 
 .check-con-con-item:nth-child(2) {
-  width: 30%;
+  width: 20%;
 }
 
 .check-con-con-item:last-child {
-  width: 30%;
+  width: 20%;
   position: relative;
 }
 
-.boxa {
+.box1{
+  position: absolute;
+  right: 0rpx;
+  top: 18rpx;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin: 0 10rpx 0 0rpx;
+  border: 1px solid #ddd;
+}
+.box2 {
+  position: absolute;
+  right: 0rpx;
+  top: 18rpx;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin: 0 10rpx 0 0rpx;
+  border: 1px solid #ddd;
+  background-image: repeating-radial-gradient(#ddd 0px, #ddd 10rpx, #fff 10rpx, #fff 20rpx);
+}
+
+.box3 {
   position: absolute;
   right: 0rpx;
   top: 18rpx;
@@ -185,16 +226,6 @@
   background-image: repeating-radial-gradient(#fe6a00 0px, #fe6a00 10rpx, #fff 10rpx, #fff 20rpx);
 }
 
-.boxaa {
-  position: absolute;
-  right: 0rpx;
-  top: 18rpx;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  margin: 0 10rpx 0 0rpx;
-  border: 1px solid #ddd;
-}
 
 .tfooter {
   height: 100rpx;

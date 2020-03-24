@@ -7,13 +7,25 @@
     </view>
     <view class="from">
       <view class="from-inp">
-        <image class="" src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_3.png" />
-        <input type="text" placeholder="请输入手机号码" placeholder-class="input-placeholder" />
+        <view class="from-inp-img">
+          <image class="" src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_3.png" />
+        </view>
+        <view class="from-inp-inp">
+          <input type="text" name="mobile" placeholder="请输入手机号码" value="18370698220" placeholder-class="input-placeholder" />
+        </view>
+        <view class="from-inp-vcode">获取验证码</view>
       </view>
+
+
       <view class="from-inp">
-        <image class="" src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_3.png" />
-        <input type="text" placeholder="请输入手机号码" placeholder-class="input-placeholder" />
+        <view class="from-inp-img">
+          <image class="" src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_4.png" />
+        </view>
+        <view class="from-inp-inp">
+          <input type="text" name="securityCode" placeholder="请输入验证码" value="123456" placeholder-class="input-placeholder" />
+        </view>
       </view>
+
     </view>
     <button class="login" form-type="submit">提交</button>
   </form>

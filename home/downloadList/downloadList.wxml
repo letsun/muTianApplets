@@ -5,19 +5,10 @@
     <span>(共3份)</span>
   </view>
   <view class="list">
-    <view class="list-item">
-      <view class="list-item-left">企业三证信息</view>
-      <view class="list-item-middle">￥40.00</view>
-
-      <view class="list-item-right">
-        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_28.png" />
-      </view>
-    </view>
-
-    <view class="list-item">
-      <view class="list-item-left">企业三证信息</view>
-      <view class="list-item-middle">￥40.00</view>
-      <view class="list-item-right">
+    <view class="list-item" wx:for="{{cartList}}" wx:key="xxx">
+      <view class="list-item-left">{{item.typeLabel}}</view>
+      <view class="list-item-middle">￥{{item.price}}</view>
+      <view class="list-item-right" catchtap="deletes" data-index="{{index}}" data-cartid="{{item.cartId}}">
         <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_28.png" />
       </view>
     </view>
@@ -28,10 +19,10 @@
       <view class="footer-total-texta">合</view>
       计:
       <view class="footer-total-textb">￥</view>
-      <view class="footer-total-textc">60.00</view>
+      <view class="footer-total-textc">{{totalPrice}}</view>
     </view>
 
     <!--点击拉起微信支付  -->
-    <view class="footer-godow" catchtap="ispay">确认下载</view>
+    <view class="footer-godow"  bindtap="addOrder">确认下载</view>
   </view>
 </view>

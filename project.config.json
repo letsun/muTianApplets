@@ -4,15 +4,23 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false,
 		"coverView": true,
+		"autoAudits": false,
 		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.10.2",
@@ -129,6 +137,20 @@
 					"id": 11,
 					"name": "下载页已下载企业列表",
 					"pathName": "download/downloadList/downloadList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "批次列表",
+					"pathName": "batchList/batchList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "获取openid页面",
+					"pathName": "index/index",
 					"query": "",
 					"scene": null
 				}

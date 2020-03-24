@@ -1,66 +1,70 @@
 // download/downloadList/downloadList.js
+const app = getApp()
+const api = require("../../utils/api.js")
+const common = require("../../utils/common.js")
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    lista: [{
+      name: 'a',
+      tq: [{
+        name: 'a糖厂'
+      }, {
+        name: 'b糖厂'
+      }]
+    }, {
+      name: 'b',
 
+      tq: [{
+        name: 'a糖厂'
+      }, {
+        name: 'b糖厂'
+      }]
+    }],
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  onShow() {
+    let that = this;
+    that.sortHistoryCorp()
+  },
+  //已下载糖企列表
+  sortHistoryCorp() {
+    let that = this;
+    common.requestGet(api.sortHistoryCorp, {
+      customerId: app.globalData.customerId,
+    }, res => {
+      let list = res.data.data;
+      let indexa = [];
+      for (var i in list) {
+        var index = i
+        indexa.push(index)
+      }
 
+      that.setData({
+        list: list,
+        index: indexa[0]
+      })
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  colorbtn(e) {
+    let that = this;
+    let index = e.currentTarget.dataset.index;
+    that.setData({
+      index: index
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  //跳转到下载详情
+  btnNav(e) {
+    let that = this;
+    let corpId = e.currentTarget.dataset.corpid
+    wx.navigateTo({
+      url: '../../home/downloadDetail/downloadDetail?corpId=' + corpId + '&type=' + 2,
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

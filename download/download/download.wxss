@@ -160,9 +160,13 @@
 }
 
 .order-con-item-text {
-  width: 25%;
-  text-align: center;
+  width: 20%;
+    text-align: center;
   line-height: 80rpx;
+}
+
+.order-con-item-text:first-child {
+  width: 40%;
 }
 
 
@@ -170,7 +174,9 @@
   color:red;
 }
 
-
+.tfooter {
+  height: 140rpx;
+}
 
 
 .footer {

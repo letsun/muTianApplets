@@ -1,75 +1,72 @@
 <!-- home/home/home.wxml -->
 <view class="container">
-    <swiper class="swiper" autoplay="{{autoplay}}" interval="3000" circular="true" indicator-dots="true" indicator-active-color="#FE6A00" indicator-color="#fff">
-        <swiper-item class="swiper-item">
-            <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_22.png" />
-        </swiper-item>
-        <swiper-item class="swiper-item">
-            <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_22.png" />
-        </swiper-item>
-        <swiper-item class="swiper-item">
-            <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_22.png" />
-        </swiper-item>
-    </swiper>
-    <view class="query" >
-        <view class="query-title">
-            <view class="query-title-text" wx:for="{{texts}}" bindtap="doc" data-index="{{index}}" wx:key="xxx">
-                <view class="{{index == indexa ? 'box' : 'boxa'}}"></view>
-                <view class="{{index == indexa ? '': 'color'}}">{{item}}</view>
-            </view>
-        </view>
-        <view class="query-pick">
-            <view class="query-pick-item">
-                <picker>孟达昌裕集团</picker>
-            </view>
-            <view class="query-pick-item">
-                <picker>孟达昌裕集团</picker>
-            </view>
-        </view>
-        <view class="query-inp">
-            <input type="text" placeholder="请输入批次号" placeholder-style="input-placeholder" />
-        </view>
-        <view class="query-btn"  bindtap="productDetail">查询</view>
+  <swiper class="swiper" autoplay="{{autoplay}}" interval="3000" circular="true" indicator-dots="true" indicator-active-color="#FE6A00" indicator-color="#fff">
+    <swiper-item class="swiper-item" wx:for="{{banner}}" wx:key="xx">
+      <image src="{{item.url}}" />
+    </swiper-item>
+  </swiper>
+  
+  <view class="query">
+    <view class="query-title">
+      <view class="query-title-text" wx:for="{{texts}}" bindtap="doc" data-index="{{index}}" wx:key="xxx">
+        <view class="{{index == indexa ? 'box' : 'boxa'}}"></view>
+        <view class="{{index == indexa ? '': 'color'}}">{{item}}</view>
+      </view>
     </view>
-    <view class="cooperation">
-        <view class="cooperation-title">
-            <view class="cooperation-title-left">
-                <image class="" src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_5.png"></image>
-                合作糖厂
-            </view>
-            <view class="cooperation-title-right" bindtap="more">更多></view>
-        </view>
-        <view class="cooperation-con">
-            <view class="cooperation-con-item">
-                <image class="" src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_6.png"></image>
-                <text>孟连糖厂</text>
-            </view>
-            <view class="cooperation-con-item">
-                <image class="" src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_6.png"></image>
-                <text>孟连糖厂</text>
-            </view>
-            <view class="cooperation-con-item">
-                <image class="" src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_6.png"></image>
-                <text>孟连糖厂</text>
-            </view>
-            <view class="cooperation-con-item">
-                <image class="" src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_6.png"></image>
-                <text>孟连糖厂</text>
-            </view>
-        </view>
-    </view>
-    <view class="footer">
-        <view class="footer-left" bindtap="home">
-            <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_8.png" />
-            首页
-        </view>
-        <view class="footer-middle" bindtap="scanCode">
-            <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_10.png" />
-        </view>
+    <view class="query-pick" wx:if="{{queryType == 1}}">
+      <view class="query-pick-item">
+        <!-- 选择集团 -->
 
-        <view class="footer-right" bindtap="download">
-            <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_11.png" />
-            下载记录
-        </view>
+        <picker bindchange="bindgroupList" value="{{index}}" range="{{groupList}}" range-key="groupCompanyName">{{groupList[index].groupCompanyName}}</picker>
+
+      </view>
+      <view class="query-pick-item">
+        <!-- 选择塘企 -->
+        <picker bindchange="bindbrand" value="{{indexx}}" range="{{brandList}}" range-key="name">{{brandList[indexx].name}}</picker>
+      </view>
     </view>
+
+    <view class="query-pick" wx:else>
+      <view class="query-pick-item">
+        <!-- 选择品牌 -->
+        <picker bindchange="bindgroupList" value="{{index}}" range="{{groupList}}" range-key="brandName">{{groupList[index].brandName}}</picker>
+      </view>
+      <view class="query-pick-item">
+        <!-- 选择塘企 -->
+        <picker bindchange="bindbrand" value="{{indexx}}" range="{{brandList}}" range-key="name">{{brandList[indexx].name}}</picker>
+      </view>
+    </view>
+    <view class="query-inp">
+      <input type="text" bindinput="batchNo" placeholder="请输入批次号" placeholder-style="input-placeholder" />
+    </view>
+    <view class="query-btn" bindtap="productDetail">查询</view>
+  </view>
+  <view class="cooperation">
+    <view class="cooperation-title">
+      <view class="cooperation-title-left">
+        <image class="" src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_5.png"></image>
+        合作糖厂
+      </view>
+      <view class="cooperation-title-right" bindtap="more">更多></view>
+    </view>
+    <view class="cooperation-con">
+      <view class="cooperation-con-item" wx:for="{{joinCorporation}}" wx:if="{{index<4}}" wx:key="xxx">
+        <image class="" src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_6.png"></image>
+        <text>{{item.name}}</text>
+      </view>
+
+    </view>
+  </view>
+  <view class="footer">
+    <view class="footer-left" bindtap="home">
+      <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_8.png" /> 首页
+    </view>
+    <view class="footer-middle" bindtap="scanCode">
+      <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_10.png" />
+    </view>
+
+    <view class="footer-right" bindtap="download">
+      <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_11.png" /> 下载记录
+    </view>
+  </view>
 </view>
