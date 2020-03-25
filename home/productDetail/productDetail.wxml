@@ -12,7 +12,7 @@
   <!-- 扫码进入显示 -->
   <view class="scecode" wx:if="{{types!=1}}">
     本质检二维码为第
-    <span>1</span>
+    <span>{{homePageQuery.scanCount}}</span>
     次扫码
   </view>
   <!-- 已输入企业产品信息展示 -->
@@ -65,13 +65,7 @@
     </view>
     <view class="proinfo-con">
       <view class="proinfo-con-img">
-        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_31.png" />
-      </view>
-      <view class="proinfo-con-img">
-        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_31.png" />
-      </view>
-      <view class="proinfo-con-img">
-        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_31.png" />
+        <image src="{{homePageQuery.url}}" />
       </view>
     </view>
   </view>

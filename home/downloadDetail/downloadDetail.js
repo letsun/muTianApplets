@@ -11,31 +11,31 @@ Page({
     mask: false,
     orderId:'',
     corpId:'',
-    type: '1',
-    orderId: '18',
+    // type: '1',
+    // orderId: '18',
   
   },
 
   onLoad(options) {
-    console.log(options)
+    //console.log(options)
     let that = this;
-    // if (options.type==1) {
-    //   that.setData({
-    //     orderId: options.orderId,
-    //     type: options.type,
-    //   })
-    //   wx.setNavigationBarTitle({
-    //     title: '订单下载详情'
-    //   })
-    // }else{
-    //   that.setData({
-    //     type: options.type,
-    //     corpId:options.corpId,
-    //   })
-    //   wx.setNavigationBarTitle({
-    //     title: '企业下载详情'
-    //   })
-    // }
+    if (options.type==1) {
+      that.setData({
+        orderId: options.orderId,
+        type: options.type,
+      })
+      wx.setNavigationBarTitle({
+        title: '订单下载详情'
+      })
+    }else{
+      that.setData({
+        type: options.type,
+        corpId:options.corpId,
+      })
+      wx.setNavigationBarTitle({
+        title: '企业下载详情'
+      })
+    }
   },
   onShow() {
     let that = this;

@@ -1,6 +1,6 @@
 <!-- home/downloadDetail/downloadDetail.wxml -->
 <view class="container">
-  <view class="info">
+  <view class="info" wx:if="{{orderDetail.corpList!=''}}">
     <view class="info-title">
       <view class="info-title-left">
         <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_23.png"></image>
@@ -16,7 +16,7 @@
       </view>
     </view>
   </view>
-  <view class="report">
+  <view class="report" wx:if="{{orderDetail.checkList!=''}}">
     <view class="report-title">
       <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_24.png"></image>
       批次质检报告

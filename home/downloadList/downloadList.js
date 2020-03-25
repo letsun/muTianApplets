@@ -74,25 +74,68 @@ Page({
       },
       success: function(res) {
         if(res.data.status == 1) {
-
           if (res.data.data.payStatus == 0) {
-            wx.reLaunch({
-              url: '../../home/downloadDetail/downloadDetail?orderId=' + res.data.data.orderId + '&type=' + 1,
-            })
-            //that.ispay()
- 
+            that.unifiedorder(res.data.data.orderNo)
           } else if (res.data.data.payStatus == 1) {
             wx.reLaunch({
               url: '../../home/downloadDetail/downloadDetail?orderId=' + res.data.data.orderId + '&type='+1,
             })
           }
-
         }else {
           common.showToast(res.data.msg, 'none', res => { })
-        }
-        
+        } 
       },
 
+    })
+  },
+
+  //微信支付
+  unifiedorder(orderNo) {
+    common.requestPost(api.unifiedorder, {
+      customerId: app.globalData.customerId,
+      openid: app.globalData.openid,
+      orderNo: orderNo,
+      type: 2
+    }, res => {
+      that.setData({
+        unifiedorder: res.data.data
+      })
+      that.isPlay()
+    })
+  },
+
+  //拉起微信支付
+  isPlay() {
+    let that = this;
+    let unifiedorder = that.data.unifiedorder;
+    wx.requestPayment({
+      timeStamp: unifiedorder.timeStamp,
+      nonceStr: unifiedorder.nonceStr,
+      package: unifiedorder.prepayId,
+      signType: unifiedorder.signType,
+      paySign: unifiedorder.paySign,
+      success(reg) {
+        common.showToast('支付成功', 'success', red => {
+          that.completPayment(1)
+        })
+      },
+      fail(reg) {
+        that.completPayment(0)
+      }
+    })
+  },
+
+  //完成支付
+  completPayment(status) {
+    let that = this;
+    let unifiedorder = that.data.unifiedorder;
+    common.requestPost(api.unifiedorder, {
+      paymentId: unifiedorder.paymentId,
+      status: status
+    }, res => {
+      wx.reLaunch({
+        url: '../../home/downloadDetail/downloadDetail?orderId=' + res.data.data.orderId + '&type=' + 1,
+      })
     })
   },
 

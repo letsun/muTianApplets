@@ -13,7 +13,7 @@ Page({
     corporationId: "",
     //corporationId: "60",
     batchNo: '', //批次号
-    pageNo: 0,
+    pageNo: 1,
     pageSize: 10,
     downloadCenterList: '',
 
@@ -28,7 +28,7 @@ Page({
 
   onShow() {
     let that = this;
-    that.downloadCenterList(); //质检列表
+    that.downloadCenterList(0); //质检列表
     that.query(); //查询购物车
     that.banner();
 
@@ -55,9 +55,14 @@ Page({
     let batchNo = e.detail.value;
     console.log(batchNo)
     that.setData({
-      batchNo: batchNo
+      batchNo: batchNo,
+      pageNo:1
     })
-    that.downloadCenterList();
+
+
+    that.downloadCenterList(1);
+
+   
   },
 
   onReachBottom() {
@@ -69,46 +74,53 @@ Page({
     })
 
     common.showLoading()
-    that.downloadCenterList()
+    that.downloadCenterList(0)
   },
 
   //下载中心列表
-  downloadCenterList() {
+  downloadCenterList(types) {
     let that = this;
     let corporationId = that.data.corporationId;
     let batchNo = that.data.batchNo;
     //2018082004
-    common.requestPost(api.downloadCenterList, {
+    common.requestGet(api.downloadCenterList, {
       customerId: app.globalData.customerId,
       corporationId: corporationId,
       batchNo: batchNo,
       pageNo: that.data.pageNo,
       pageSize: that.data.pageSize
     }, res => {
-      if (that.data.downloadCenterList == '') {
+      if (types==1) {
         let downloadCenterList = res.data.data;
-        // for (let i in downloadCenterList.batchList) {
-        //   downloadCenterList.batchList[i].checkend = false
-        // }
         that.setData({
           downloadCenterList: downloadCenterList,
           totalPage: res.data.totalPage
         })
-      } else {
-
-        if (that.data.pageNo <= that.data.totalPage) {
-          let downloadCenterList = that.data.downloadCenterList
-          downloadCenterList.batchList = downloadCenterList.batchList.concat(res.data.data.batchList);
+      }else {
+        if (that.data.downloadCenterList == '') {
+          let downloadCenterList = res.data.data;
           that.setData({
             downloadCenterList: downloadCenterList,
             totalPage: res.data.totalPage
           })
-
         } else {
-          common.showToast('没有更多数据了', 'none', res => {})
+
+          if (that.data.pageNo <= that.data.totalPage) {
+            let downloadCenterList = that.data.downloadCenterList
+            downloadCenterList.batchList = downloadCenterList.batchList.concat(res.data.data.batchList);
+            that.setData({
+              downloadCenterList: downloadCenterList,
+              totalPage: res.data.totalPage
+            })
+
+          } else {
+            common.showToast('没有更多数据了', 'none', res => { })
+          }
+          wx.hideLoading()
         }
-        wx.hideLoading()
       }
+
+
 
     })
   },
@@ -299,8 +311,12 @@ Page({
 
   onHide() {
     let that = this;
+    let downloadCenterList = that.data.downloadCenterList
+
     that.setData({
-      autoplay: false
+      autoplay: false,
+      pageNo:1,
+      downloadCenterList:''
     })
   }
 

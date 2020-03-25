@@ -19,23 +19,29 @@ Page({
   },
 
   onLoad(options) {
-    //types 1是直接进来的
+    //types 1是直接进来的 2扫码进来的
+    // console.log(options)
     let that = this;
-    if (types == 1) {
+    if (options.types == 1) {
       that.setData({
         batchNo: options.batchNo,
         corporationId: options.corporationId,
+        types:options.types
       })
-    }else {
-      
+      that.homePageQuery();
+      that.banner();
+    }else {    
+      that.setData({
+        code: options.code,
+        types: options.types
+      })
+      that.produceBatch();
     }
 
   },
 
   onShow() {
     let that = this;
-    that.homePageQuery();
-    that.banner();
     that.setData({
       autoplay: true
     })
@@ -53,12 +59,12 @@ Page({
     })
   },
 
-  //查询企业产品信息
+  //直接查询企业产品信息
   homePageQuery() {
     let that = this;
     let batchNo = that.data.batchNo;
     let corporationId = that.data.corporationId;
-    common.requestPost(api.homePageQuery, {
+    common.requestGet(api.homePageQuery, {
       batchNo: batchNo,
       corporationId: corporationId
     }, res => {
@@ -73,6 +79,32 @@ Page({
         homePageQuery: res.data.data,
         introduction: introduction
       }) 
+    })
+  },
+
+
+  //二维码进来查询企业产品信息
+  produceBatch() {
+    let that = this;
+    let batchNo = that.data.batchNo;
+    let corporationId = that.data.corporationId;
+    common.requestGet(api.produceBatch + that.data.code, {
+
+    }, res => {
+      let introduction = res.data.data.systemCorporation.introduction
+      var detail = '';
+      if (introduction) {
+        that.setData({
+          recipesDesc: detail.replace(/\<img/gi, '<img style="display:block;max-width:690rpx;margin:0 auto;height:auto;"> '),
+        })
+      }
+      that.setData({
+        homePageQuery: res.data.data,
+        introduction: introduction,
+        corporationId: res.data.data.systemCorporation.id
+      })
+
+      that.banner();
     })
   },
   //下载中心

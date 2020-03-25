@@ -13,7 +13,7 @@
                 </view>
                 <view class="con-item-con-item">
                     <view class="con-item-con-key">订单金额</view>
-                    <view class="con-item-con-value">{{item.totalPrice}}</view>
+                    <view class="con-item-con-value">￥{{item.totalPrice}}</view>
                 </view>
             </view>
         </view>

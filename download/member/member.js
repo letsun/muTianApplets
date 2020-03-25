@@ -9,27 +9,17 @@ Page({
    */
   data: {
     indexa:'0',
-    datas: [{
-      member: '',
-      money: ''
-    }, {
-      member: '',
-      money: '400.00'
-    }, {
-      member: '',
-      money: ''
-    }]
   },
 
   memberBtn (e) {
     let that= this;
     let index = e.currentTarget.dataset.index;
-    
+    let nowLevelConfigId = e.currentTarget.dataset.id
     that.setData({
-      indexa:index
+      indexa:index,
+      nowLevelConfigId: nowLevelConfigId
     })
   },
-
 
   onShow() {
     let that = this
@@ -44,42 +34,91 @@ Page({
       openid: app.globalData.openid
     }, res => {
       let customerDetail = res.data.data;
-      let datas = that.data.datas;
-
-
-      if (customerDetail.levelType==1) {
-       
-        datas[0].money = res.data.data.monthPrice;
-        datas[0].member = '包月会员'
-        datas[1].money = res.data.data.quarterPrice;
-        datas[1].member = '包季会员'
-        datas[2].money = res.data.data.yearPrice;
-        datas[2].member = '包年会员' 
-      } else if (customerDetail.levelType == 2) {
-        datas.splice(0, 1)
-        datas[0].money = res.data.data.quarterPrice;
-        datas[0].member = '包季会员'
-        datas[1].money = res.data.data.yearPrice; 
-        datas[1].member = '包年会员' 
-      } else if (customerDetail.levelType == 3){
-        datas.splice(0, 2)
-        datas[0].money = res.data.data.yearPrice; 
-        datas[0].member = '包年会员' 
+      
+      if (res.data.data.levelUp!='') {
+        var nowLevelConfigId = res.data.data.levelUp[0].id
       }else {
-        datas = '';
+        var nowLevelConfigId = ''
       }
-
       that.setData({
         customerDetail: customerDetail,
-        datas:datas,
+        nowLevelConfigId: nowLevelConfigId
       })
     })
   },
 
+  // levelUp() {
+  //   let that = this;
+  //   common.requestGet(api.levelUp, {
+  //     customerId: app.globalData.customerId,
+  //     nowLevelConfigId: that.data.nowLevelConfigId
+  //   }, res => {
+
+  //     that.customerDetail()
+  //   })
+  // },
+
+
+
+  //微信支付
+  unifiedorder() {
+    let that = this;
+    let levelConfigId = that.data.nowLevelConfigId
+    common.requestPost(api.unifiedorder, {
+      customerId: app.globalData.customerId,
+      levelConfigId: levelConfigId,
+      openid: app.globalData.openid,
+      type: 1
+    }, res => {
+      that.setData({
+        unifiedorder: res.data.data
+      })
+      that.isPlay()
+    })
+  },
+
+  //拉起微信支付
+  isPlay() {
+    let that = this;
+    let unifiedorder = that.data.unifiedorder;
+    wx.requestPayment({
+      timeStamp: unifiedorder.timeStamp,
+      nonceStr: unifiedorder.nonceStr,
+      package: unifiedorder.prepayId,
+      signType: unifiedorder.signType,
+      paySign: unifiedorder.paySign,
+      success(reg) {
+        common.showToast('支付成功', 'success', red => {
+          that.completPayment(1)
+        })
+      },
+      fail(reg) {
+        that.completPayment(0)
+      }
+    })
+  },
+
+  //完成支付
+  completPayment(status) {
+    let that = this;
+    let unifiedorder = that.data.unifiedorder;
+    common.requestPost(api.unifiedorder, {
+      paymentId: unifiedorder.paymentId,
+      status: status
+    }, res => {
+      wx.reLaunch({
+        url: '../../home/downloadDetail/downloadDetail?orderId=' + res.data.data.orderId + '&type=' + 1,
+      })
+    })
+  },
+
+
+
+
   //返回下载首页
   download() {
     wx.reLaunch({
-      url:'../download/download/download'
+      url:'../../download/download/download'
     })
   }
 })

@@ -7,7 +7,10 @@
     <view class="hader-middle">
       <view class="header-middle-name">{{dowlist.mobile}}</view>
       <view class="header-middle-text">
-        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_16.png" /> {{dowlist.levelType}}
+        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_16.png" wx:if="{{dowlist.levelType==1}}" />
+        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_16-1.png" wx:if="{{dowlist.levelType==2}}" />
+        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_16-2.png" wx:if="{{dowlist.levelType==3}}" />
+        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_16-3.png" wx:if="{{dowlist.levelType==4}}" /> {{dowlist.levelTypeLabel}}
       </view>
     </view>
     <view class="header-right">
@@ -35,10 +38,10 @@
       <view class="order-title-left">
         <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_17.png" /> 订单
       </view>
-      <view class="order-title-right" bindtap="orderList" >更多></view>
+      <view class="order-title-right" bindtap="orderList">更多></view>
     </view>
     <view class="order-con">
-      <view class="order-con-item" >
+      <view class="order-con-item">
         <view class="order-con-item-text">下单时间</view>
         <view class="order-con-item-text">金额</view>
         <view class="order-con-item-text">订单内容</view>

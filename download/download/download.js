@@ -15,7 +15,6 @@ Page({
 
   onShow(){
     let that = this;
-
     that.dowlist()
   },
 
@@ -83,19 +82,17 @@ Page({
 
 
   //扫码
-  scanCode(){
+  scanCode() {
     var that = this;
     wx.scanCode({
-      onlyFromCamera: true,
+      // onlyFromCamera: true,
       success(res) {
         if (res.result != 'undefined') {
           var urlList = res.result.split('/');
           var code = urlList[urlList.length - 1];
-          that.setData({
-            code: code,
-          });
-
-          console.log(code);
+          wx.reLaunch({
+            url: '../../home/productDetail/productDetail?types=' + 2 + '&code=' + code,
+          })
         }
       }
     })
@@ -105,29 +102,68 @@ Page({
     let that = this;
     let index = e.currentTarget.dataset.index;
     let orderList = that.data.dowlist.orderList;
+    
     if (orderList[index].payStatus == 1) {
       wx.navigateTo({
         url: '../../home/downloadDetail/downloadDetail?orderId=' + orderList[index].orderId + '&type=' + 1,
       })
     } else if (orderList[index].payStatus == 0) {
-      that.ispay()
+      let orderNo = orderList[index].orderNo;
+      that.unifiedorder(orderNo);
     }
   },
-  ispay() {
 
-    //拉起微信支付
-    wx.requestPayment({
-      timeStamp: '',
-      nonceStr: '',
-      package: '',
-      signType: 'MD5',
-      paySign: '',
-      success(res) { },
-      fail(res) { }
+  //微信支付
+  unifiedorder(orderNo) {
+    common.requestPost(api.unifiedorder,{
+      customerId:app.globalData.customerId,
+      openid: app.globalData.openid,
+      orderNo: orderNo,
+      type: 2
+    },res=>{
+      that.setData({
+        unifiedorder:res.data.data
+      })
+
+      that.isPlay()
     })
   },
-  
 
+  isPlay() {
+    let that= this;
+    let unifiedorder = that.data.unifiedorder;
+    //拉起微信支付
+    wx.requestPayment({
+      timeStamp: unifiedorder.timeStamp,
+      nonceStr: unifiedorder.nonceStr,
+      package: unifiedorder.prepayId,
+      signType: unifiedorder.signType,
+      paySign: unifiedorder.paySign,
+      success(reg) {
+        common.showToast('支付成功', 'success', red => {
+          that.completPayment(1)
+        })
+      },
+      fail(reg) {
+        that.completPayment(0)
+      }
+    })  
+  },
+
+  //完成支付
+  completPayment(status) {
+    let that = this;
+    let unifiedorder = that.data.unifiedorder;
+    common.requestPost(api.unifiedorder, {
+      paymentId: unifiedorder.paymentId,
+      status: status
+    }, res => {
+
+    })
+  },
+
+
+  
     //跳转到下载详情
   btnNav(e) {
     let that = this;

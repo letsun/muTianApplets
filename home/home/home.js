@@ -14,8 +14,22 @@ Page({
     index: 0, //选择集团默认下标
     indexx: 0 //选择糖企默认下标
   },
-  onLoad() {
+  onLoad(options) {
     let that = this;
+    // let q = decodeURIComponent(options.q);
+    // if (q != 'undefined') {
+    //   let urlList = q.split('/');
+    //   let code = urlList[urlList.length - 1];
+    //   that.setData({
+    //     code: code,
+    //   });
+
+    //   wx.reLaunch({
+    //     url: '../../home/productDetail/productDetail?types=' + 2,
+    //   })
+    // }
+
+
     if (that.data.indexa == 0) {
       that.queryGroupOrBrand(1)
     } else {
@@ -46,8 +60,7 @@ Page({
   //合作糖厂
   joinCorporation() {
     let that = this;
-    common.requestGet(api.joinCorporation, {
-    }, res => {
+    common.requestGet(api.joinCorporation, {}, res => {
       let joinCorporation = res.data.data.batchList
       that.setData({
         joinCorporation: joinCorporation
@@ -78,8 +91,6 @@ Page({
           groupList: groupList,
           queryType: 2
         })
-
-
         that.queryBrandCorporation(groupList[0].brandName)
       }
     })
@@ -224,14 +235,15 @@ Page({
   scanCode() {
     var that = this;
     wx.scanCode({
-      onlyFromCamera: true,
+      // onlyFromCamera: true,
       success(res) {
         if (res.result != 'undefined') {
           var urlList = res.result.split('/');
           var code = urlList[urlList.length - 1];
-          that.setData({
-            code: code,
-          });
+
+          wx.reLaunch({
+            url: '../../home/productDetail/productDetail?types=' + 2 +'&code=' +code,
+          })
         }
       }
     })
