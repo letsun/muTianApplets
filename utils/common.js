@@ -220,7 +220,7 @@ function requestGet(url, data, success) {
     method: "GET",
     header: {
       'Accept': 'application/json',
-      "content-type": "application/x-www-form-urlencoded",
+      "content-type": "application/x-www-form-urlencoded;charset=utf-8",
     },
 
     data: data,

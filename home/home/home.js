@@ -28,8 +28,6 @@ Page({
     //     url: '../../home/productDetail/productDetail?types=' + 2,
     //   })
     // }
-
-
     if (that.data.indexa == 0) {
       that.queryGroupOrBrand(1)
     } else {
@@ -50,7 +48,7 @@ Page({
   banner() {
     let that = this;
     common.requestGet(api.banner, {
-      corpId: "100000"
+      corpId: "0"
     }, res => {
       that.setData({
         banner: res.data.data.list
@@ -69,7 +67,7 @@ Page({
   },
   /***
    * 查询所有集团/品牌
-   * 1:集团 2:品牌 查询品牌时返回糖企信息
+   *queryType 1:集团 2:品牌 查询品牌时返回糖企信息
    */
 
   queryGroupOrBrand(queryType) {
@@ -83,7 +81,6 @@ Page({
           groupList: groupList,
           queryType: 1
         })
-
         that.queryGroupCorporation(groupList[0].groupCompanyId)
       } else {
         let groupList = res.data.data.resultList;
@@ -130,11 +127,19 @@ Page({
       brandName: brandName
     }, res => {
       let brandList = res.data.data.list;
-      let corporationId = brandList[indexx].corporationId
+      if (brandList != '') {
+        let corporationId = brandList[indexx].corporationId;
+        that.setData({
+          corporationId: corporationId
+        })
+      } else {
+        that.setData({
+          corporationId: ''
+        })
+      }
 
       that.setData({
         brandList: brandList,
-        corporationId: corporationId
       })
     })
   },
@@ -242,7 +247,7 @@ Page({
           var code = urlList[urlList.length - 1];
 
           wx.reLaunch({
-            url: '../../home/productDetail/productDetail?types=' + 2 +'&code=' +code,
+            url: '../../home/productDetail/productDetail?types=' + 2 + '&code=' + code,
           })
         }
       }

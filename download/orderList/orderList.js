@@ -73,6 +73,7 @@ Page({
 
   //微信支付
   unifiedorder(orderNo) {
+    let that = this;
     common.requestPost(api.unifiedorder, {
       customerId: app.globalData.customerId,
       openid: app.globalData.openid,
@@ -93,7 +94,7 @@ Page({
     wx.requestPayment({
       timeStamp: unifiedorder.timeStamp,
       nonceStr: unifiedorder.nonceStr,
-      package: unifiedorder.prepayId,
+      package:'prepay_id='+ unifiedorder.prepayId,
       signType: unifiedorder.signType,
       paySign: unifiedorder.paySign,
       success(reg) {
@@ -111,13 +112,12 @@ Page({
   completPayment(status) {
     let that = this;
     let unifiedorder = that.data.unifiedorder;
-    common.requestPost(api.unifiedorder, {
+    common.requestPost(api.completPayment, {
       paymentId: unifiedorder.paymentId,
       status: status
     }, res => {
 
     })
   },
-
 
 })

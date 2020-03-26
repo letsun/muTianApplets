@@ -9,17 +9,17 @@ Page({
    */
   data: {
     mask: false,
-    orderId:'',
-    corpId:'',
+    orderId: '',
+    corpId: '',
     // type: '1',
     // orderId: '18',
-  
+
   },
 
   onLoad(options) {
     //console.log(options)
     let that = this;
-    if (options.type==1) {
+    if (options.type == 1) {
       that.setData({
         orderId: options.orderId,
         type: options.type,
@@ -27,10 +27,10 @@ Page({
       wx.setNavigationBarTitle({
         title: '订单下载详情'
       })
-    }else{
+    } else {
       that.setData({
         type: options.type,
-        corpId:options.corpId,
+        corpId: options.corpId,
       })
       wx.setNavigationBarTitle({
         title: '企业下载详情'
@@ -71,15 +71,14 @@ Page({
   //下载弹窗
   downbtn(e) {
     let that = this;
-    console.log(e)
     let packType = e.currentTarget.dataset.packtype;
-    console.log(e)
+
     // let url = e.currentTarget.dataset.url; 
-    let url = app.globalData.https + '&customerId=' + app.globalData.customerId +'&corpId=' + that.data.corpId + '&orderId=' + that.data.orderId + '&type=' + that.data.type + '&packType=' + packType
+    let url = app.globalData.https + '&customerId=' + app.globalData.customerId + '&corpId=' + that.data.corpId + '&orderId=' + that.data.orderId + '&type=' + that.data.type + '&packType=' + packType
     that.setData({
       url: url,
       mask: true,
-      
+
     })
   },
 
@@ -108,10 +107,9 @@ Page({
   },
 
   //预览图片
-  previewImage(e){
-    console.log('1')
-    let url = e.currentTarget.dataset.url; 
-    console.log(url)
+  previewImage(e) {
+    let url = e.currentTarget.dataset.url;
+
     wx.previewImage({
       urls: Array.of(url) // 需要预览的图片http链接列表
     })

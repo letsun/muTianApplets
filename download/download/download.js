@@ -9,11 +9,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    pageNo:'0',
-    pageSize:'10'
+    pageNo: '0',
+    pageSize: '10'
   },
 
-  onShow(){
+  onShow() {
     let that = this;
     that.dowlist()
   },
@@ -28,9 +28,9 @@ Page({
       pageNo: that.data.pageNo,
       pageSize: that.data.pageSize,
     }, res => {
-        that.setData({
-          dowlist:res.data.data
-        })
+      that.setData({
+        dowlist: res.data.data
+      })
     })
   },
 
@@ -48,7 +48,7 @@ Page({
 
   //退出登录
   loginOut() {
-    common.showModal('提示','是否退出登录',confirm=>{
+    common.showModal('提示', '是否退出登录', confirm => {
       common.requestPost(api.loginOut, {
         openId: app.globalData.openid
       }, res => {
@@ -56,7 +56,7 @@ Page({
           url: '../../login/login',
         })
       })
-    },cancel=>{})
+    }, cancel => { })
 
   },
 
@@ -102,7 +102,7 @@ Page({
     let that = this;
     let index = e.currentTarget.dataset.index;
     let orderList = that.data.dowlist.orderList;
-    
+
     if (orderList[index].payStatus == 1) {
       wx.navigateTo({
         url: '../../home/downloadDetail/downloadDetail?orderId=' + orderList[index].orderId + '&type=' + 1,
@@ -115,14 +115,15 @@ Page({
 
   //微信支付
   unifiedorder(orderNo) {
-    common.requestPost(api.unifiedorder,{
-      customerId:app.globalData.customerId,
+    let that = this;
+    common.requestPost(api.unifiedorder, {
+      customerId: app.globalData.customerId,
       openid: app.globalData.openid,
       orderNo: orderNo,
       type: 2
-    },res=>{
+    }, res => {
       that.setData({
-        unifiedorder:res.data.data
+        unifiedorder: res.data.data
       })
 
       that.isPlay()
@@ -130,13 +131,13 @@ Page({
   },
 
   isPlay() {
-    let that= this;
+    let that = this;
     let unifiedorder = that.data.unifiedorder;
     //拉起微信支付
     wx.requestPayment({
       timeStamp: unifiedorder.timeStamp,
       nonceStr: unifiedorder.nonceStr,
-      package: unifiedorder.prepayId,
+      package: 'prepay_id='+ unifiedorder.prepayId,
       signType: unifiedorder.signType,
       paySign: unifiedorder.paySign,
       success(reg) {
@@ -147,14 +148,14 @@ Page({
       fail(reg) {
         that.completPayment(0)
       }
-    })  
+    })
   },
 
   //完成支付
   completPayment(status) {
     let that = this;
     let unifiedorder = that.data.unifiedorder;
-    common.requestPost(api.unifiedorder, {
+    common.requestPost(api.completPayment, {
       paymentId: unifiedorder.paymentId,
       status: status
     }, res => {
@@ -163,8 +164,8 @@ Page({
   },
 
 
-  
-    //跳转到下载详情
+
+  //跳转到下载详情
   btnNav(e) {
     let that = this;
     let corpId = e.currentTarget.dataset.corpid

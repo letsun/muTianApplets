@@ -13,8 +13,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 180rpx;
-  max-height: 219rpx;
+  max-width:249rpx;
+  max-height: 170rpx;
 }
 
 .from {
@@ -52,10 +52,15 @@
 
   padding: 0rpx 0 10rpx 30rpx;
 }
-
+.from-inp input {
+  width: 500rpx;
+}
 .from-inp:first-child input {
   width: 365rpx;
 }
+
+
+
 
 .login {
   width: 550rpx !important;

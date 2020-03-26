@@ -14,7 +14,7 @@ Page({
     //corporationId: "60",
     batchNo: '', //批次号
     pageNo: 1,
-    pageSize: 10,
+    pageSize: 15,
     downloadCenterList: '',
 
   },

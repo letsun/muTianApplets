@@ -18,6 +18,7 @@
 .swiper-item image {
   height: 350rpx;
   width: 690rpx;
+  border-radius: 15rpx;
 }
 
 .swiper .wx-swiper-dot-active::before {

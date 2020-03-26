@@ -104,10 +104,14 @@
 
 .proinfo-text-item-key {
   width: 150rpx;
+  /* overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; */
   color: #aaa;
 }
 
 .proinfo-text-item-value {
+  width: 480rpx;
   color: #666;
 }
 
