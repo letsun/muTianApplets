@@ -25,5 +25,17 @@ Page({
       })
     })
   },
+
+
+    //点击合作糖厂查询企业信息
+    productDetaila(e) {
+      let that = this;
+      let index = e.currentTarget.dataset.index;
+      let joinCorporation = that.data.joinCorporation;
+      let corporationId = joinCorporation[index].corporationId;
+      wx.navigateTo({
+        url: '../../home/productDetail/productDetail?batchNo=' + '' + '&corporationId=' + corporationId + '&types=' + 1,
+      })
+    },
  
 })

@@ -59,10 +59,8 @@ Page({
       pageNo:1
     })
 
-
     that.downloadCenterList(1);
 
-   
   },
 
   onReachBottom() {

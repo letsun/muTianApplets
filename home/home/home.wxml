@@ -50,7 +50,7 @@
 			<view class="cooperation-title-right" bindtap="more">更多></view>
 		</view>
 		<view class="cooperation-con">
-			<view class="cooperation-con-item" wx:for="{{joinCorporation}}" wx:if="{{index<4}}" wx:key="xxx">
+			<view class="cooperation-con-item" data-index="{{index}}" bindtap="productDetaila" wx:for="{{joinCorporation}}" wx:if="{{index<4}}" wx:key="xxx" >
 				<image class="" src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_6.png"></image>
 				<text>{{item.name}}</text>
 			</view>

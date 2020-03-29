@@ -1,89 +1,91 @@
 <!-- home/downloadCenter/downloadCenter.wxml -->
 <view class="container">
-  <swiper class="swiper" autoplay="{{autoplay}}" interval="3000" circular="true" indicator-dots="true" indicator-active-color="#FE6A00" indicator-color="#fff">
-    <swiper-item class="swiper-item" wx:for="{{banner}}" wx:key="xx">
-      <image src="{{item.url}}" />
-    </swiper-item>
-  </swiper>
+	<swiper class="swiper" autoplay="{{autoplay}}" interval="3000" circular="true" indicator-dots="true" indicator-active-color="#FE6A00" indicator-color="#fff">
+		<swiper-item class="swiper-item" wx:for="{{banner}}" wx:key="xx">
+			<image src="{{item.url}}" />
+		</swiper-item>
+	</swiper>
 
-  <view class="content">
-  
-  <view class="proinfo" wx:if="{{downloadCenterList.uploadImage==1}}">
-    <view class="proinfo-title">
-      <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_23.png"></image>
-      三证下载
-    </view>
-    <view class="proinfo-con">
-      企业三证信息
-      <view  wx:if="{{downloadCenterList.buyStatus == 0}}" class="bo1" bindtap="checkenda"></view>
-      <view  wx:if="{{downloadCenterList.buyStatus == 1}}" class="bo2" ></view>
-      <view  wx:if="{{downloadCenterList.buyStatus == 2}}" class="bo3" bindtap="checkenda"></view>
-    </view>
-  </view>
+	<view class="content">
+
+		<view class="proinfo" wx:if="{{downloadCenterList.uploadImage==1}}">
+			<view class="proinfo-title">
+				<image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_23.png"></image>
+				三证下载
+			</view>
+			<view class="proinfo-con">
+				企业三证信息
+				<view wx:if="{{downloadCenterList.buyStatus == 0}}" class="bo1" bindtap="checkenda"></view>
+				<view wx:if="{{downloadCenterList.buyStatus == 1}}" class="bo2"></view>
+				<view wx:if="{{downloadCenterList.buyStatus == 2}}" class="bo3" bindtap="checkenda"></view>
+			</view>
+		</view>
 
 
-  <!--质检下载 -->
-  <view class="check">
-    <view class="check-title">
-      <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_24.png"></image>
-      质检下载
-      <view class="check-title-inp">
-        <image class="" src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_25.png" />
-        <input placeholder="请输入批次号" placeholder-style="input-placeholder" bindblur="batchNo" />
-      </view>
-    </view>
-    <view class="check-con">
-      <view class="check-con-header">
-        <view class="check-con-header-item">生产批号</view>
-        <view class="check-con-header-item">等级</view>
-      </view>
-      <view class="check-con-con" wx:for="{{downloadCenterList.batchList}}" wx:key="xxx">
-        <view class="check-con-con-item">{{item.batchNo}}</view>
-        <view class="check-con-con-item">{{item.productLevel}}</view>
-        <view class="check-con-con-item">
-          <view wx:if="{{item.buyStatus == 0}}" class="box1" bindtap="checkend"  data-index="{{index}}"></view>
-          <view wx:if="{{item.buyStatus == 1}}" class="box2" ></view>
-          <view wx:if="{{item.buyStatus == 2}}" class="box3" bindtap="checkend"  data-index="{{index}}"></view>
-        </view>
-      </view>
-    </view>
-  </view>
+		<!--质检下载 -->
+		<view class="check">
+			<view class="check-title">
+				<image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_24.png"></image>
+				质检下载
+				<view class="check-title-inp">
+					<image class="" src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_25.png" />
+					<input placeholder="请输入批次号" placeholder-style="input-placeholder" bindblur="batchNo" />
+				</view>
+			</view>
+			<view class="check-con">
+				<view class="check-con-header">
+					<view class="check-con-header-item">生产批号</view>
+					<view class="check-con-header-item">等级</view>
+				</view>
+				<view class="check-con-con" wx:for="{{downloadCenterList.batchList}}" wx:key="xxx">
+					<view class="check-con-con-item">{{item.batchNo}}</view>
+					<view class="check-con-con-item">{{item.productLevel}}</view>
+					<view class="check-con-con-item">
+						<view wx:if="{{item.buyStatus == 0}}" class="box1" bindtap="checkend" data-index="{{index}}"></view>
+						<view wx:if="{{item.buyStatus == 1}}" class="box2"></view>
+						<view wx:if="{{item.buyStatus == 2}}" class="box3" bindtap="checkend" data-index="{{index}}"></view>
+					</view>
+				</view>
+			</view>
+		</view>
 
-  </view>
-  <view class="tfooter"></view>
-  <view class="footer">
-    <view class="footer-dow" bindtap="maskbtn">
-      <image  src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_26.png" />
-      <view class="footer-dow-num">{{cartCount}}</view>
-    </view>
-    <view class="footer-total">
-      <view class="footer-total-texta">合</view>
-      计:
-      <view class="footer-total-textb">￥</view>
-      <view class="footer-total-textc">{{totalPrice}}</view>
-    </view>
-    <view class="footer-godow" catchtap="downloadList">去下载</view>
-  </view>
+	</view>
+	<view class="tfooter"></view>
+	<view class="footer">
+		<view class="footer-dow" bindtap="maskbtn">
+			<image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_26.png" />
+			<view class="footer-dow-num">{{cartCount}}</view>
+		</view>
+		<view class="footer-total">
+			<view class="footer-total-texta">合</view>
+			计:
+			<view class="footer-total-textb">￥</view>
+			<view class="footer-total-textc">{{totalPrice}}</view>
+		</view>
+		<view class="footer-godow" catchtap="downloadList">去下载</view>
+	</view>
 
-  <!-- 遮罩层 -->
-  <view class="mask" bindtap="colsemask" wx:if="{{mask}}">
-    <view class="mask-con">
-      <view class="mask-con-title" catchtap="deleteAll">
-        <image  src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_27.png" /> 清空购物车
-      </view>
-      <view class="mask-con-text">
-        已选下载内容
-        <span>(共3项)</span>
-      </view>
-      <view class="mask-con-con">
-        <view class="mask-con-item" wx:for="{{cartList}}" data-index="{{index}}" wx:key="xxx">
-          <view class="mask-con-item-left">{{item.typeLabel}}</view>
-          <view class="mask-con-item-middle">￥{{item.price}}</view>
-          <view class="mask-con-item-right" data-index="{{index}}" data-cartid="{{item.cartId}}" catchtap="deletes">
-            <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_28.png" />
-          </view>
-        </view>
-      </view>
-    </view>
-  </view>
+	<!-- 遮罩层 -->
+	<view class="mask" bindtap="colsemask" wx:if="{{mask}}">
+		<view class="mask-con">
+			<view class="mask-con-title" catchtap="deleteAll">
+				<image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_27.png" /> 清空购物车
+			</view>
+			<view class="mask-con-text">
+				已选下载内容
+				<span>(共3项)</span>
+			</view>
+			<view class="mask-con-con">
+				<view class="mask-con-item" wx:for="{{cartList}}" data-index="{{index}}" wx:key="xxx">
+					<view class="mask-con-item-name">{{item.shortName}}</view>
+					<view class="mask-con-item-batchNo">{{item.batchNo}}</view>
+					<view class="mask-con-item-left">{{item.typeLabel}}</view>
+					<view class="mask-con-item-middle">￥{{item.price}}</view>
+					<view class="mask-con-item-right" data-index="{{index}}" data-cartid="{{item.cartId}}" catchtap="deletes">
+						<image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_28.png" />
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
 </view>

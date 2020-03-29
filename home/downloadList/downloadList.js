@@ -26,6 +26,7 @@ Page({
       that.setData({
         cartList: res.data.data.cartList,
         totalPrice: res.data.data.totalPrice,
+        cartCount:res.data.data.cartCount
       })
     })
   },
@@ -55,38 +56,44 @@ Page({
   addOrder(){
     let that = this;
     let cartList = that.data.cartList;
-    let cartIdList= []
-    for (let i in cartList) {
-      cartIdList.push(cartList[i].cartId)
+    let cartIdList= [];
+    let cartCount = that.data.cartCount;
+
+    if (cartCount>0) {
+      for (let i in cartList) {
+        cartIdList.push(cartList[i].cartId)
+      }
+      cartIdList.join(',')
+  
+      wx.request({
+        method: 'POST',
+        url: api.addOrder,
+        data: {
+          customerId: app.globalData.customerId,
+          cartIdList: cartIdList,
+        },
+        header: {
+          'Accept': 'application/json',
+          "content-type": "application/json"
+        },
+        success: function(res) {
+          if(res.data.status == 1) {
+            if (res.data.data.payStatus == 0) {
+              that.unifiedorder(res.data.data.orderNo)
+            } else if (res.data.data.payStatus == 1) {
+              wx.reLaunch({
+                url: '../../home/downloadDetail/downloadDetail?orderId=' + res.data.data.orderId + '&type='+1,
+              })
+            }
+          }else {
+            common.showToast(res.data.msg, 'none', res => { })
+          } 
+        },
+  
+      })
+    }else {
+      common.showToast('购物车数量不能为空','none',res=>{})
     }
-    cartIdList.join(',')
-
-    wx.request({
-      method: 'POST',
-      url: api.addOrder,
-      data: {
-        customerId: app.globalData.customerId,
-        cartIdList: cartIdList,
-      },
-      header: {
-        'Accept': 'application/json',
-        "content-type": "application/json"
-      },
-      success: function(res) {
-        if(res.data.status == 1) {
-          if (res.data.data.payStatus == 0) {
-            that.unifiedorder(res.data.data.orderNo)
-          } else if (res.data.data.payStatus == 1) {
-            wx.reLaunch({
-              url: '../../home/downloadDetail/downloadDetail?orderId=' + res.data.data.orderId + '&type='+1,
-            })
-          }
-        }else {
-          common.showToast(res.data.msg, 'none', res => { })
-        } 
-      },
-
-    })
   },
 
   //微信支付

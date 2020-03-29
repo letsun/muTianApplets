@@ -19,25 +19,35 @@ Page({
   },
 
   onLoad(options) {
-    //types 1是直接进来的 2扫码进来的
-    // console.log(options)
+    //types 1是直接进来的 2首页扫码进来的
     let that = this;
-    if (options.types == 1) {
+    let q = decodeURIComponent(options.q);
+    if (q != 'undefined') {
+      let urlList = q.split('/');
+      let code = urlList[urlList.length - 1];
       that.setData({
-        batchNo: options.batchNo,
-        corporationId: options.corporationId,
-        types:options.types
-      })
-      that.homePageQuery();
-      that.banner();
-    }else {    
-      that.setData({
-        code: options.code,
-        types: options.types
-      })
-      that.produceBatch();
-    }
+        code: code,
+      });
 
+      that.produceBatch();
+    }else {
+      if (options.types == 1) {
+        that.setData({
+          batchNo: options.batchNo,
+          corporationId: options.corporationId,
+          types:options.types
+        })
+        that.homePageQuery();
+        that.banner();
+      }else {    
+        that.setData({
+          code: options.code,
+          types: options.types
+        })
+        that.produceBatch();
+      }
+    }
+    
   },
 
   onShow() {
@@ -86,8 +96,7 @@ Page({
   //二维码进来查询企业产品信息
   produceBatch() {
     let that = this;
-    let batchNo = that.data.batchNo;
-    let corporationId = that.data.corporationId;
+
     common.requestGet(api.produceBatch + that.data.code, {
 
     }, res => {
@@ -110,9 +119,18 @@ Page({
   //下载中心
   downloadCenter() {
     let that = this;
-    wx.navigateTo({
-      url: '../../home/downloadCenter/downloadCenter?corporationId=' + that.data.corporationId,
-    })
+
+    if (app.globalData.customerId!='') {
+      wx.navigateTo({
+        url: '../../home/downloadCenter/downloadCenter?corporationId=' + that.data.corporationId,
+      })
+    }else {
+      wx.navigateTo({
+        url: '../../index/index',
+      })
+    }
+
+
   },
 
   onHide(){

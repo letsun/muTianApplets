@@ -2,10 +2,14 @@
 <view class="container">
   <view class="header">
     已选信息
-    <span>(共3份)</span>
+    <span>(共{{cartCount}}份)</span>
   </view>
   <view class="list">
     <view class="list-item" wx:for="{{cartList}}" wx:key="xxx">
+
+      <view class="list-item-name">{{item.shortName}}</view>
+
+      <view class="list-item-batchNo">{{item.batchNo}}</view>
       <view class="list-item-left">{{item.typeLabel}}</view>
       <view class="list-item-middle">￥{{item.price}}</view>
       <view class="list-item-right" catchtap="deletes" data-index="{{index}}" data-cartid="{{item.cartId}}">

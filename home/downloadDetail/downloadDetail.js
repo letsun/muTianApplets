@@ -74,7 +74,7 @@ Page({
     let packType = e.currentTarget.dataset.packtype;
 
     // let url = e.currentTarget.dataset.url; 
-    let url = app.globalData.https + '&customerId=' + app.globalData.customerId + '&corpId=' + that.data.corpId + '&orderId=' + that.data.orderId + '&type=' + that.data.type + '&packType=' + packType
+    let url = api.ip + 'customerId=' + app.globalData.customerId + '&corpId=' + that.data.corpId + '&orderId=' + that.data.orderId + '&type=' + that.data.type + '&packType=' + packType
     that.setData({
       url: url,
       mask: true,
@@ -109,10 +109,16 @@ Page({
   //预览图片
   previewImage(e) {
     let url = e.currentTarget.dataset.url;
+    console.log(url)
+    if (url!='') {
+      wx.previewImage({
+        urls: Array.of(url), // 需要预览的图片http链接列表
+        current:Array.of(url)
+      })
+    }else {
+      common.showToast('您查看的质检报告为空','none',res=>{})
+    }
 
-    wx.previewImage({
-      urls: Array.of(url) // 需要预览的图片http链接列表
-    })
   },
 
 

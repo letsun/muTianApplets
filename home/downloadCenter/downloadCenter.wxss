@@ -347,19 +347,35 @@
 }
 
 
+.mask-con-con{
+  overflow-x: hidden;
+  height: 400rpx;
+  font-size: 24rpx;
+}
+
 .mask-con-item {
   display: flex;
   line-height: 90rpx;
   padding:0 30rpx;
+
   border-bottom: 1rpx solid #eee;
 }
 
+.mask-con-item-name {
+  width: 23%;
+}
+
+.mask-con-item-batchNo {
+  width: 35%;
+}
+
 .mask-con-item-left {
-  width: 60%;
+  width: 20%;
+  text-align: center;
 }
 
 .mask-con-item-middle {
-  width: 30%;
+  width: 12%;
   font-weight: bold;
   color: #e21414;
 }

@@ -302,6 +302,8 @@ function getopenid(callback) {
 
 
 
+
+
 module.exports = {
   showModal: showModal,
   showToast: showToast,

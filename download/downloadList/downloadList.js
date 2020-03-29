@@ -26,7 +26,7 @@ Page({
     }],
   },
 
-  onShow() {
+  onLoad() {
     let that = this;
     that.sortHistoryCorp()
   },

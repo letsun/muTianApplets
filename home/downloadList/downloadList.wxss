@@ -17,6 +17,7 @@
 .list-item {
     display: flex;
     padding: 30rpx;
+    font-size: 24rpx;
     border-bottom: 1rpx solid #ddd;
 }
 
@@ -26,12 +27,20 @@
     margin-top: 5rpx;
 }
 
+.list-item-name {
+    width: 20%;
+}
+
+.list-item-batchNo {
+    width: 40%;
+}
+
 .list-item-left {
-    width: 70%;
+    width: 15%;
 }
 
 .list-item-middle{
-   width: 20%;
+   width: 15%;
    text-align: center;
    margin-top: 2rpx;
    color: #e21414;
@@ -40,6 +49,10 @@
 .list-item-right {
     width: 10%;
     text-align: right;
+}
+
+.tfooter {
+    height: 110rpx;
 }
 
 

@@ -2,7 +2,7 @@
 
 <view class="container">
   <view class="con">
-    <view class="con-item" wx:for="{{joinCorporation}}" wx:key="xxx">
+    <view class="con-item" wx:for="{{joinCorporation}}" wx:key="xxx" data-index="{{index}}" bindtap="productDetaila">
       <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_6.png"></image>
       <text>{{item.name}}</text>
     </view>

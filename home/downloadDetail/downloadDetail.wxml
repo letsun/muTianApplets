@@ -29,7 +29,7 @@
       <view class="report-con-con" wx:for="{{orderDetail.checkList}}" wx:key="xxx">
         <view class="report-con-con-left">{{item.batchNo}}</view>
         <view class="report-con-con-middel" bindtap="previewImage" data-url="{{item.url}}">
-          <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_32.png" ></image>
+          <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_32.png"  ></image>
           查看
         </view>
         <view class="report-con-con-right" bindtap="downbtn" data-packType="{{3}}" data-url="{{item.url}}">

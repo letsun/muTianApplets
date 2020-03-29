@@ -12,6 +12,10 @@
         <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_16-2.png" wx:if="{{dowlist.levelType==3}}" />
         <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_16-3.png" wx:if="{{dowlist.levelType==4}}" /> {{dowlist.levelTypeLabel}}
       </view>
+
+      <view class="header-middle-text1" wx:if="{{dowlist.levelType!=1}}">
+        {{dowlist.endTime}}到期
+      </view>
     </view>
     <view class="header-right">
       <view class="header-right-upgrade" bindtap="member">会员升级</view>

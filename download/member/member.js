@@ -47,18 +47,6 @@ Page({
     })
   },
 
-  // levelUp() {
-  //   let that = this;
-  //   common.requestGet(api.levelUp, {
-  //     customerId: app.globalData.customerId,
-  //     nowLevelConfigId: that.data.nowLevelConfigId
-  //   }, res => {
-
-  //     that.customerDetail()
-  //   })
-  // },
-
-
 
   //微信支付
   unifiedorder() {
@@ -88,10 +76,15 @@ Page({
       signType: unifiedorder.signType,
       paySign: unifiedorder.paySign,
       success(reg) {
-        common.showToast('支付成功', 'success', red => {
+        setTimeout(res=>{
           that.customerDetail()
+        },1000)
+        
+        common.showToast('支付成功', 'success', red => {
           that.completPayment(1)
         })
+        
+        
       },
       fail(reg) {
         that.completPayment(0)

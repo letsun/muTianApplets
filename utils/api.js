@@ -3,6 +3,9 @@ var test = 'https://mut.lxcyhd.com';//测试
 var ip = test;
 
 var api = {
+  //getProduceCheckOpenid: ip + '/wechat/getProduceCheckOpenid', //获取openId
+ 
+  ip:ip+'/api/order/packDownload?', //下载地址
   getCheckOpenidByCode: ip + '/wechat/getCheckOpenidByCode', //获取openId
   login: ip + '/api/customer/login', //登陆
   loginOut: ip + '/api/customer/loginOut',//注销登陆

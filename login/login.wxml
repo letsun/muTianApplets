@@ -11,7 +11,7 @@
           <image class="" src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_3.png" />
         </view>
         <view class="from-inp-inp"  >
-          <input type="text" bindblur="mobile" name="mobile" placeholder="请输入手机号码" maxlength="11" placeholder-class="input-placeholder" />
+          <input type="text" bindinput="mobile" name="mobile" placeholder="请输入手机号码" maxlength="11" placeholder-class="input-placeholder" />
         </view>
         <view class="from-inp-vcode" bindtap="vcode">{{text}}</view>
       </view>

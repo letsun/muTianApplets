@@ -16,23 +16,15 @@ Page({
   },
   onLoad(options) {
     let that = this;
-    // let q = decodeURIComponent(options.q);
-    // if (q != 'undefined') {
-    //   let urlList = q.split('/');
-    //   let code = urlList[urlList.length - 1];
-    //   that.setData({
-    //     code: code,
-    //   });
 
-    //   wx.reLaunch({
-    //     url: '../../home/productDetail/productDetail?types=' + 2,
-    //   })
-    // }
+
     if (that.data.indexa == 0) {
       that.queryGroupOrBrand(1)
     } else {
       that.queryGroupOrBrand(2)
     }
+
+    
   },
   onShow() {
     let that = this;
@@ -226,6 +218,17 @@ Page({
 
     wx.navigateTo({
       url: '../../home/productDetail/productDetail?batchNo=' + batchNo + '&corporationId=' + corporationId + '&types=' + 1,
+    })
+  },
+
+  //点击合作糖厂查询企业信息
+  productDetaila(e) {
+    let that = this;
+    let index = e.currentTarget.dataset.index;
+    let joinCorporation = that.data.joinCorporation;
+    let corporationId = joinCorporation[index].corporationId;
+    wx.navigateTo({
+      url: '../../home/productDetail/productDetail?batchNo=' + '' + '&corporationId=' + corporationId + '&types=' + 1,
     })
   },
 
