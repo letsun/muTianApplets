@@ -28,7 +28,7 @@ Page({
   vcode() {
     let that = this;
     let mobile = that.data.mobile;
-    let time = 60; //验证码时间
+    let time = 59; //验证码时间
 
     if (mobile==''||mobile==null) {
       common.showToast('请输入手机号码','none',res=>{})
@@ -44,13 +44,20 @@ Page({
       common.requestPost(api.getValidCode, {
         mobile: mobile,
       }, res => {
+
+
         if (!that.data.disabled) {
+
+          that.setData({
+            text:'59秒后重试',
+            disabled: true
+          })
           let interval = setInterval(res => {
             time--;
             if (time > 0) {
               that.setData({
                 text: time + '秒后重试',
-                disabled: true
+                
               })
             } else {
               clearInterval(interval);

@@ -81,6 +81,7 @@ Page({
             if (res.data.data.payStatus == 0) {
               that.unifiedorder(res.data.data.orderNo)
             } else if (res.data.data.payStatus == 1) {
+             
               wx.reLaunch({
                 url: '../../home/downloadDetail/downloadDetail?orderId=' + res.data.data.orderId + '&type='+1,
               })
@@ -124,9 +125,7 @@ Page({
       paySign: unifiedorder.paySign,
       success(reg) {
         common.showToast('支付成功', 'success', red => {
-          wx.reLaunch({
-            url: '../../home/downloadDetail/downloadDetail?orderId=' + unifiedorder.orderId + '&type=' + 1,
-          })
+          console.log('order',unifiedorder.orderId);
           that.completPayment(1)
         })
       },
@@ -144,7 +143,9 @@ Page({
       paymentId: unifiedorder.paymentId,
       status: status
     }, res => {
-
+      wx.reLaunch({
+        url: '../../home/downloadDetail/downloadDetail?orderId=' + unifiedorder.orderId + '&type=' + 1,
+      })
     })
   },
 

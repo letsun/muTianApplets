@@ -60,8 +60,10 @@ Page({
     }, res => {
       that.setData({
         unifiedorder: res.data.data
+      },res=>{
+        that.isPlay()
       })
-      that.isPlay()
+   
     })
   },
 
@@ -76,15 +78,10 @@ Page({
       signType: unifiedorder.signType,
       paySign: unifiedorder.paySign,
       success(reg) {
-        setTimeout(res=>{
-          that.customerDetail()
-        },1000)
-        
         common.showToast('支付成功', 'success', red => {
           that.completPayment(1)
         })
-        
-        
+         
       },
       fail(reg) {
         that.completPayment(0)
@@ -94,7 +91,6 @@ Page({
 
   //完成支付
   completPayment(status) {
-    
     let that = this;
     let unifiedorder = that.data.unifiedorder;
     common.requestPost(api.completPayment, {
@@ -102,6 +98,8 @@ Page({
       status: status
     }, res => {
 
+      // setTimeout()
+      that.customerDetail()
     })
   },
 

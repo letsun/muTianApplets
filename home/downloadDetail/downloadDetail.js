@@ -17,7 +17,7 @@ Page({
   },
 
   onLoad(options) {
-    //console.log(options)
+    console.log(options,'20')
     let that = this;
     if (options.type == 1) {
       that.setData({
@@ -36,21 +36,29 @@ Page({
         title: '企业下载详情'
       })
     }
+
+    that.orderDetail();
   },
   onShow() {
-    let that = this;
-    that.orderDetail();
+  
+ 
   },
 
   //订单下载详情(单/汇总)
   orderDetail() {
     let that = this;
+
+    console.log(app.globalData.customerId,'51')
+    console.log(that.data.corpId,'52')
+    console.log(that.data.orderId,'53')
+    console.log(that.data.type,'54')
     common.requestPost(api.orderDetail, {
       customerId: app.globalData.customerId,
       corpId: that.data.corpId,
       orderId: that.data.orderId,
       type: that.data.type
     }, res => {
+        console.log(res,'61')
       that.setData({
         orderDetail: res.data.data
       })
