@@ -37,21 +37,18 @@ Page({
       })
     }
 
-    that.orderDetail();
+    
   },
   onShow() {
-  
- 
+    let that = this;
+    that.orderDetail();
   },
 
   //订单下载详情(单/汇总)
   orderDetail() {
     let that = this;
 
-    console.log(app.globalData.customerId,'51')
-    console.log(that.data.corpId,'52')
-    console.log(that.data.orderId,'53')
-    console.log(that.data.type,'54')
+
     common.requestPost(api.orderDetail, {
       customerId: app.globalData.customerId,
       corpId: that.data.corpId,
@@ -79,15 +76,33 @@ Page({
   //下载弹窗
   downbtn(e) {
     let that = this;
-    let packType = e.currentTarget.dataset.packtype;
+    var downloadType = e.currentTarget.dataset.downloadtype;
+    var checkId = e.currentTarget.dataset.checkid;
+    console.log(checkId)
+    if (downloadType == 7) {
+      var checkId = checkId;
+    }else {
+      var checkId =''
+    }
+   
 
-    // let url = e.currentTarget.dataset.url; 
-    let url = api.ip + 'customerId=' + app.globalData.customerId + '&corpId=' + that.data.corpId + '&orderId=' + that.data.orderId + '&type=' + that.data.type + '&packType=' + packType
-    that.setData({
-      url: url,
-      mask: true,
-
+    //必填 1:订单全部 2:订单三证 3:订单批次 4:糖企全部 5:糖企三证 6:糖企批次 7:单个质检
+    common.requestPost(api.getDownloadCode,{
+      checkId:checkId,
+      corpId:that.data.corpId,
+      customerId:app.globalData.customerId,
+      orderId:that.data.orderId,
+      downloadType:downloadType
+    },res=>{
+      that.setData({
+        url: api.ip + res.data.data.url,
+        code: res.data.data.code,
+        mask: true,
+      })
     })
+
+
+
   },
 
   //关闭弹窗

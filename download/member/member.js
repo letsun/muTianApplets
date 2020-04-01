@@ -52,6 +52,8 @@ Page({
   unifiedorder() {
     let that = this;
     let levelConfigId = that.data.nowLevelConfigId
+
+    common.showLoading()
     common.requestPost(api.unifiedorder, {
       customerId: app.globalData.customerId,
       levelConfigId: levelConfigId,
@@ -62,6 +64,7 @@ Page({
         unifiedorder: res.data.data
       },res=>{
         that.isPlay()
+        
       })
    
     })
@@ -81,10 +84,11 @@ Page({
         common.showToast('支付成功', 'success', red => {
           that.completPayment(1)
         })
-         
+        wx.hideLoading({})
       },
       fail(reg) {
         that.completPayment(0)
+        wx.hideLoading({})
       }
     })
   },

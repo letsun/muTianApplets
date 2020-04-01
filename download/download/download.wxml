@@ -32,7 +32,7 @@
     <view class="nav-con">
       <view class="nav-con-item" wx:for="{{dowlist.corpList}}" wx:key="xxx" data-corpId="{{item.corpId}}" bindtap="btnNav">
         <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_6.png" />
-        <text>{{item.name}}</text>
+        <text>{{item.shortName}}</text>
       </view>
 
     </view>

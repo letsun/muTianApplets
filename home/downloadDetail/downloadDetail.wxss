@@ -138,7 +138,7 @@
 }
 
 .mask {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
@@ -152,7 +152,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background: #fff;
-  height: 260rpx;
+  height: 340rpx;
   width: 520rpx;
   border-radius: 15rpx;
 }
@@ -189,6 +189,22 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 90%;
+  border: 1rpx solid #eee;
+  color: #666;
+}
+
+.mask-con-code {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  padding-top: 20rpx;
+  color: #666;
+}
+
+.mask-con-inp {
+  padding: 0 30rpx;
+  border-radius: 10rpx;
+  margin-left: 20rpx;
   border: 1rpx solid #eee;
   color: #666;
 }

@@ -44,10 +44,6 @@ Page({
       common.requestPost(api.getValidCode, {
         mobile: mobile,
       }, res => {
-
-
-        if (!that.data.disabled) {
-
           that.setData({
             text:'59秒后重试',
             disabled: true
@@ -56,8 +52,7 @@ Page({
             time--;
             if (time > 0) {
               that.setData({
-                text: time + '秒后重试',
-                
+                text: time + '秒后重试',             
               })
             } else {
               clearInterval(interval);
@@ -67,7 +62,7 @@ Page({
               })
             }
           }, 1000)
-        }
+        
       })
     }
 
