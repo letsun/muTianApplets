@@ -7,28 +7,30 @@ Page({
   },
 
 
-  onShow(){
+  onShow() {
     common.showLoading()
     common.getopenid(res => {
       app.globalData.openid = res.data.data.openid
       if (res.data.status == 1) {
         common.requestGet(api.login, {
           openId: res.data.data.openid
-        }, reg => {  
+        }, reg => {
           wx.hideLoading()
-          if (reg.data.data.checkResult=="0") {
+          if (reg.data.data.checkResult == "0") {
+            
             wx.reLaunch({
-              url: '../login/login',
+              url: '../home/home/home',
             })
-          }else {
+
+          } else {
             app.globalData.customerId = reg.data.data.customerId;
             wx.reLaunch({
               url: '../home/home/home',
             })
           }
-         
+
         })
-      }else {
+      } else {
         wx.hideLoading()
       }
 

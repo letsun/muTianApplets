@@ -13,11 +13,11 @@
 				<image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_23.png"></image>
 				三证下载
 			</view>
-			<view class="proinfo-con">
+			<view class="proinfo-con" bindtap="checkenda">
 				企业三证信息
-				<view wx:if="{{downloadCenterList.buyStatus == 0}}" class="bo1" bindtap="checkenda"></view>
+				<view wx:if="{{downloadCenterList.buyStatus == 0}}" class="bo1"></view>
 				<view wx:if="{{downloadCenterList.buyStatus == 1}}" class="bo2"></view>
-				<view wx:if="{{downloadCenterList.buyStatus == 2}}" class="bo3" bindtap="checkenda"></view>
+				<view wx:if="{{downloadCenterList.buyStatus == 2}}" class="bo3"></view>
 			</view>
 		</view>
 
@@ -37,13 +37,13 @@
 					<view class="check-con-header-item">生产批号</view>
 					<view class="check-con-header-item">等级</view>
 				</view>
-				<view class="check-con-con" wx:for="{{downloadCenterList.batchList}}" wx:key="xxx">
+				<view class="check-con-con" wx:for="{{downloadCenterList.batchList}}"  bindtap="checkend" data-index="{{index}}" wx:key="xxx">
 					<view class="check-con-con-item">{{item.batchNo}}</view>
 					<view class="check-con-con-item">{{item.productLevel}}</view>
 					<view class="check-con-con-item">
-						<view wx:if="{{item.buyStatus == 0}}" class="box1" bindtap="checkend" data-index="{{index}}"></view>
+						<view wx:if="{{item.buyStatus == 0}}" class="box1"></view>
 						<view wx:if="{{item.buyStatus == 1}}" class="box2"></view>
-						<view wx:if="{{item.buyStatus == 2}}" class="box3" bindtap="checkend" data-index="{{index}}"></view>
+						<view wx:if="{{item.buyStatus == 2}}" class="box3"></view>
 					</view>
 				</view>
 			</view>

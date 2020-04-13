@@ -125,8 +125,9 @@ Page({
         url: '../../home/downloadCenter/downloadCenter?corporationId=' + that.data.corporationId,
       })
     }else {
+      // app.globalData.types = 1;
       wx.navigateTo({
-        url: '../../index/index',
+        url: '../../login/login?types='+1,
       })
     }
 

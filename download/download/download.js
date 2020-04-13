@@ -52,8 +52,9 @@ Page({
       common.requestPost(api.loginOut, {
         openId: app.globalData.openid
       }, res => {
+        app.globalData.customerId =''
         wx.reLaunch({
-          url: '../../login/login',
+          url: '../../login/login?types='+ 0,
         })
       })
     }, cancel => { })

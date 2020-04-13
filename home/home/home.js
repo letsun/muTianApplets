@@ -202,9 +202,16 @@ Page({
 
   //下载首页
   download() {
-    wx.reLaunch({
-      url: '../../download/download/download',
-    })
+
+    if (app.globalData.customerId!='') {
+      wx.reLaunch({
+        url: '../../download/download/download',
+      })
+    }else {
+      wx.navigateTo({
+        url: '../../login/login?types='+1,
+      })
+    }
   },
 
   //查询企业产品信息

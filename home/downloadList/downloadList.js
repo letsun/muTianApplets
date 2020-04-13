@@ -143,9 +143,13 @@ Page({
       paymentId: unifiedorder.paymentId,
       status: status
     }, res => {
-      wx.reLaunch({
-        url: '../../home/downloadDetail/downloadDetail?orderId=' + unifiedorder.orderId + '&type=' + 1,
-      })
+
+      if (status == 1) {
+        wx.reLaunch({
+          url: '../../home/downloadDetail/downloadDetail?orderId=' + unifiedorder.orderId + '&type=' + 1,
+        })
+      }
+
     })
   },
 

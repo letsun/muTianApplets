@@ -6,40 +6,68 @@
 				<image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_23.png"></image>
 				企业三证信息
 			</view>
-			<view class="info-title-right" wx:if="{{type==2}}" bindtap="downbtn" data-downloadtype="{{5}}" data-url="{{orderDetail.checkList.url}}" data-packType="{{2}}">
-				<image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_29.png"></image>
-			</view>
-
-			<view class="info-title-right" wx:if="{{type==1}}" bindtap="downbtn" data-downloadtype="{{2}}" data-url="{{orderDetail.checkList.url}}" data-packType="{{2}}">
-				<image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_29.png"></image>
-			</view>
 		</view>
-		<view class="info-img">
-			<view class="info-img-item" wx:for="{{orderDetail.corpList[0].uploadImage}}" wx:key='xxx'>
-				<image src="{{item}}" />
+		<view class="info-img" wx:for="{{orderDetail.corpList}}" wx:key='xxx'>
+			<view class="info-img-title" bindtap="radio"  data-index="{{index}}" data-type="{{0}}">
+
+				<view class="info-img-check">
+					<view class="box1" wx:if='{{!item.checked}}'></view>
+					<view class="box3" wx:else></view>
+				</view>
+
+				<view class="info-img-text">
+					{{item.shortName}}
+				</view>
+
+				<view class="info-img-title-right" catchtap="savephonea" data-index="{{index}}">
+					
+					<image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_29.png"></image>
+					下载到手机
+				</view>
+			</view>
+			<view class="info-img-item">
+				<image wx:for="{{item.uploadImage}}" wx:key='xxx' src="{{item}}" catchtap="previewImage" data-url="{{item}}" />
 			</view>
 		</view>
 	</view>
 	<view class="report" wx:if="{{orderDetail.checkList!=''&&orderDetail.checkList!=unifiedorder}}">
 		<view class="report-title">
-			<image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_24.png"></image>
-			批次质检报告
+			<view>
+				<image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_24.png"></image>
+				批次质检报告
+			</view>
+
+			<view class="report-title-inp">
+				<image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_25.png"></image>
+				<input placeholder="请输入批次列表" bindblur="batchNochang"></input>
+			</view>
+
+			<view class="report-title-btn">
+				<view bindtap="selectall">全选</view>
+				<view bindtap="counter">反选</view>
+			</view>
+
 		</view>
 		<view class="report-con">
 			<view class="report-con-header">
 				<view class="report-con-header-left">生产批次</view>
 				<view class="report-con-header-right">质检报告</view>
 			</view>
-			<view class="report-con-con" wx:for="{{orderDetail.checkList}}" wx:key="xxx">
+			<view class="report-con-con" wx:for="{{orderDetail.checkList}}" wx:key="xxx" bindtap="radio" data-index="{{index}}" data-type="{{1}}">
+				<view class="report-con-con-check">
+					<view class="box1" wx:if='{{!item.checked}}'></view>
+					<view class="box3" wx:else></view>
+				</view>
+
 				<view class="report-con-con-left">{{item.batchNo}}</view>
-				<view class="report-con-con-middel" bindtap="previewImage" data-url="{{item.url}}">
+				<view class="report-con-con-middel" catchtap="previewImage" data-url="{{item.url}}">
 					<image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_32.png"></image>
 					查看
 				</view>
 
-				<view class="report-con-con-right" bindtap="downbtn" data-checkId="{{item.checkId}}" data-downloadtype="{{7}}" data-url="{{item.url}}">
+				<view class="report-con-con-right" catchtap="savephone" data-index="{{index}}" data-checkId="{{item.checkId}}" data-downloadtype="{{7}}" data-url="{{item.url}}">
 					<image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_33.png"></image>
-					下载
+					下载到手机
 				</view>
 
 			</view>
@@ -56,7 +84,7 @@
 	</block>
 
 
-	<block wx:if="{{type == 1}}" >
+	<block wx:if="{{type == 1}}">
 		<view class="footer" bindtap="downbtn" data-downloadtype="{{1}}" wx:if="{{orderDetail!=''&&orderDetail!=unifiedorder}}">
 			<image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_34.png" />
 		</view>
@@ -80,6 +108,8 @@
 			</view>
 			<view class="mask-con-footer">
 				<view class="mask-btna" bindtap="copy">复制链接到粘贴板</view>
+
+				<view class="mask-text">由于文件过大请复制链接到电脑浏览器下载</view>
 			</view>
 		</view>
 	</view>
