@@ -328,6 +328,7 @@ Page({
     let orderDetail = that.data.orderDetail
     let url = orderDetail.checkList[index].url;
     // debugger
+    showloading('下载中')
     wx.downloadFile({
       url: url,
       success: res => {

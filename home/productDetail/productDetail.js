@@ -10,9 +10,9 @@ Page({
    */
   data: {
     autoplay: true,
-    corporationId:'',
-    types:'',
-    batchNo:'',
+    corporationId: '',
+    types: '',
+    batchNo: '',
     // corporationId: '59',
     // types: '1',
     // batchNo: '20180205-0427'
@@ -30,16 +30,16 @@ Page({
       });
 
       that.produceBatch();
-    }else {
+    } else {
       if (options.types == 1) {
         that.setData({
           batchNo: options.batchNo,
           corporationId: options.corporationId,
-          types:options.types
+          types: options.types
         })
         that.homePageQuery();
         that.banner();
-      }else {    
+      } else {
         that.setData({
           code: options.code,
           types: options.types
@@ -47,7 +47,7 @@ Page({
         that.produceBatch();
       }
     }
-    
+
   },
 
   onShow() {
@@ -88,7 +88,7 @@ Page({
       that.setData({
         homePageQuery: res.data.data,
         introduction: introduction
-      }) 
+      })
     })
   },
 
@@ -120,24 +120,36 @@ Page({
   downloadCenter() {
     let that = this;
 
-    if (app.globalData.customerId!='') {
+    if (app.globalData.customerId != '') {
       wx.navigateTo({
         url: '../../home/downloadCenter/downloadCenter?corporationId=' + that.data.corporationId,
       })
-    }else {
+    } else {
       // app.globalData.types = 1;
       wx.navigateTo({
-        url: '../../login/login?types='+1,
+        url: '../../login/login?types=' + 1,
       })
     }
 
 
   },
 
-  onHide(){
+  //预览图片
+  previewImage(e) {
+    let url = e.currentTarget.dataset.url;
+    console.log(url)
+
+    wx.previewImage({
+      urls: Array.of(url), // 需要预览的图片http链接列表
+      current: Array.of(url)
+    })
+
+  },
+
+  onHide() {
     let that = this;
     that.setData({
-      autoplay:false
+      autoplay: false
     })
   }
 })

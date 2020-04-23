@@ -1,33 +1,38 @@
 <!-- download/member/member.wxml -->
 <view class="container">
-    <view class="title" wx:if="{{customerDetail.levelType==1}}">尊敬的{{customerDetail.mobile}}会员,您现在是</view>
-    <view class="title" wx:if="{{customerDetail.levelType!=1}}">包段时间：{{customerDetail.startTime}}~{{customerDetail.endTime}}</view>
-    <view class="uinfo">
-        <view class="uinfo-photo">
-            <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_31.png" />
-        </view>
-        <view class="uinfo-text">
-            <view class="uinfo-text-phone">{{customerDetail.mobile}}</view>
-            <view class="uinfo-text-text">
-                <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_16.png" wx:if="{{customerDetail.levelType==1}}" />
-                <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_16-1.png" wx:if="{{customerDetail.levelType==2}}" />
-                <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_16-2.png" wx:if="{{customerDetail.levelType==3}}" />
-                <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_16-3.png" wx:if="{{customerDetail.levelType==4}}" />
-                {{customerDetail.levelTypeLabel}}
-            </view>
-        </view>
-    </view>
-    <view class="con">
-        <view class="con-item {{index==indexa?'border':''}}" bindtap="memberBtn" wx:for="{{customerDetail.levelUp}}" data-index="{{index}}"   data-id="{{item.id}}" wx:key="xxx">
-            <view class="con-item-remd" wx:if="{{index==indexa}}">推荐</view>
-            <view class="con-item-bg {{index==indexa?'bg':''}}"></view>
-            <view class="con-item-title">{{item.levelTypeLabel}}</view>
-            <view class="con-item-money">
-                ￥<span>{{item.price}}</span>
-            </view>
-        </view>
-    </view>
+	<!-- <view class="title" wx:if="{{customerDetail.levelType==1}}">尊敬的{{customerDetail.mobile}}会员,您现在是</view>
+    <view class="title" wx:if="{{customerDetail.levelType!=1}}">包段时间：{{customerDetail.startTime}}~{{customerDetail.endTime}}</view> -->
+	<view class="uinfo">
+		<view class="uinfo-photo">
+			<image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_31.png" />
+		</view>
+		<view class="uinfo-text">
+			<view class="uinfo-text-phone">{{customerDetail.mobile}}</view>
+			<view class="uinfo-text-text">
+				<image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_16.png" wx:if="{{customerDetail.levelType==1}}" />
+				<image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_16-1.png" wx:if="{{customerDetail.levelType==2}}" />
+				<image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_16-2.png" wx:if="{{customerDetail.levelType==3}}" />
+				<image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_16-3.png" wx:if="{{customerDetail.levelType==4}}" />
+				<!-- {{customerDetail.levelTypeLabel}} -->
 
-    <view class="btn" wx:if="{{customerDetail.levelUp!=''&&customerDetail.levelUp!=undefined}}" bindtap="unifiedorder">立即升级</view>
-    <view class="btn btna" wx:else bindtap="download"> 返回首页</view>
+				<text  wx:if="{{dowlist.levelType==1}}">普通会员</text>
+				<text  wx:else>正式会员</text>
+			</view>
+
+			<view wx:if="{{customerDetail.levelType!=1}}">{{endTime}}到期，购后有效期将顺延</view>
+		</view>
+	</view>
+	<view class="con">
+		<view class="con-item {{index==indexa?'border':''}}" bindtap="memberBtn" wx:for="{{customerDetail.levelUp}}" data-index="{{index}}" data-id="{{item.id}}" wx:key="xxx">
+			<view class="con-item-remd" wx:if="{{index==indexa}}">推荐</view>
+			<view class="con-item-bg {{index==indexa?'bg':''}}"></view>
+			<view class="con-item-title">{{item.levelTypeLabel}}</view>
+			<view class="con-item-money">
+				￥<span>{{item.price}}</span>
+			</view>
+		</view>
+	</view>
+
+	<view class="btn" wx:if="{{customerDetail.levelUp!=''&&customerDetail.levelUp!=undefined}}" bindtap="unifiedorder">立即购买</view>
+	<view class="btn btna" wx:else bindtap="download"> 返回首页</view>
 </view>

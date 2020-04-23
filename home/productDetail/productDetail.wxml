@@ -65,7 +65,7 @@
     </view>
     <view class="proinfo-con">
       <view class="proinfo-con-img">
-        <image src="{{homePageQuery.url}}" />
+        <image src="{{homePageQuery.url}}"  catchtap="previewImage" data-url="{{homePageQuery.url}}"/>
       </view>
     </view>
   </view>

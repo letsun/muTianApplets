@@ -48,7 +48,7 @@ Page({
 
   //退出登录
   loginOut() {
-    common.showModal('提示', '是否退出登录', confirm => {
+    common.showModal('提示', '是否退出登录？', confirm => {
       common.requestPost(api.loginOut, {
         openId: app.globalData.openid
       }, res => {

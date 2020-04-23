@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    indexa:'0',
+    indexa:'2',
   },
 
   memberBtn (e) {
@@ -34,15 +34,19 @@ Page({
       openid: app.globalData.openid
     }, res => {
       let customerDetail = res.data.data;
-      
+      let indexa = that.data.indexa;
+      let endTime = customerDetail.endTime.split(' ');
+      console.log(endTime[0])
+
       if (res.data.data.levelUp!='') {
-        var nowLevelConfigId = res.data.data.levelUp[0].id
+        var nowLevelConfigId = res.data.data.levelUp[indexa].id
       }else {
         var nowLevelConfigId = ''
       }
       that.setData({
         customerDetail: customerDetail,
-        nowLevelConfigId: nowLevelConfigId
+        nowLevelConfigId: nowLevelConfigId,
+        endTime:endTime[0]
       })
     })
   },

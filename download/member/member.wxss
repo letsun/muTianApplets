@@ -9,6 +9,7 @@
 .uinfo {
     padding: 30rpx;
     display: flex;
+    border-top: 1rpx #F9F9F9 solid;
     border-bottom: 10rpx #F9F9F9 solid;
 }
 
