@@ -23,7 +23,7 @@
 
 
 		<!--质检下载 -->
-		<view class="check">
+		<view class="check" wx:if="{{downloadCenterList.checkReport==1}}">
 			<view class="check-title">
 				<image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_24.png"></image>
 				质检下载

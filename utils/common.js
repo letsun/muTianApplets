@@ -40,10 +40,10 @@ function showToast(title, icon, success) {
     icon: icon,
     duration: 2000,
     mask: true,
-    success: function(res) {
+    success: function (res) {
       success(res)
     },
-    fail: function(res) {},
+    fail: function (res) { },
   })
 }
 
@@ -92,7 +92,7 @@ function requestPost(url, data, success) {
       if (res.data.status == 1) {
         success(res)
       } else {
-        showToast(res.data.msg, 'none',res=>{})
+        showToast(res.data.msg, 'none', res => { })
       }
     },
 
@@ -164,7 +164,7 @@ function requestPosts(url, data, success) {
  * fali:失败回调
  */
 
-function requestPostf(url, data, success,fail) {
+function requestPostf(url, data, success, fail) {
 
   wx.request({
     url: url,
@@ -184,7 +184,7 @@ function requestPostf(url, data, success,fail) {
       } else {
         fail(res)
         wx.hideLoading()
-       
+
       }
     },
 
@@ -268,7 +268,7 @@ function requestGets(url, data, success) {
         wx.hideLoading()
       } else {
         wx.hideLoading()
-        showToast(res.data.msg, 'none',res=>{})
+        showToast(res.data.msg, 'none', res => { })
       }
     },
 
@@ -276,7 +276,7 @@ function requestGets(url, data, success) {
       wx.hideLoading()
       showToast('网络异常，请重新刷新页面', 'none', res => { })
     },
-    complete: res => {}
+    complete: res => { }
   })
 }
 
@@ -289,9 +289,9 @@ function requestGets(url, data, success) {
 function getopenid(callback) {
   wx.login({
     success: res => {
-      requestPost(api.getCheckOpenidByCode,{
+      requestPost(api.getCheckOpenidByCode, {
         code: res.code
-      },res=>{
+      }, res => {
         callback(res)
       })
     }
@@ -310,7 +310,7 @@ module.exports = {
   showLoading: showLoading,
   requestPost: requestPost,
   requestPosts: requestPosts,
-  requestPostf:requestPostf,
+  requestPostf: requestPostf,
   requestGet: requestGet,
   requestGets: requestGets,
   getopenid: getopenid,
