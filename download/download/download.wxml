@@ -30,7 +30,7 @@
   <view class="nav">
     <view class="nav-title">
       <view class="nav-title-left">
-        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_15.png" /> 最近下载塘企
+        <image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_15.png" /> 最近下载糖企
       </view>
       <view class="nav-title-right" bindtap="downloadList">更多></view>
     </view>
