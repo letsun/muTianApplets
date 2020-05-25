@@ -355,8 +355,8 @@
 
 .mask-con-item {
   display: flex;
-  line-height: 90rpx;
-  padding:0 30rpx;
+
+  padding: 30rpx;
 
   border-bottom: 1rpx solid #eee;
 }

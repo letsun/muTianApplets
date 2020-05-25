@@ -4,7 +4,9 @@
     <view class="title" wx:if="{{customerDetail.levelType!=1}}">包段时间：{{customerDetail.startTime}}~{{customerDetail.endTime}}</view> -->
 	<view class="uinfo">
 		<view class="uinfo-photo">
-			<image src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_31.png" />
+			<view class="uinfo-photo-image"><open-data type="userAvatarUrl"></open-data></view>
+			
+			<!-- <image class="uinfo-photo-image" src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_31.png" /> -->
 		</view>
 		<view class="uinfo-text">
 			<view class="uinfo-text-phone">{{customerDetail.mobile}}</view>

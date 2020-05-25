@@ -13,11 +13,16 @@
   width: 20%;
 }
 
-.header-logo image{
+.header-logo {
+
+}
+
+.header-logo-image{
   width: 100rpx;
   height: 100rpx;
   margin: 30rpx;
   border-radius: 50%;
+  overflow: hidden;
   border: 4rpx solid #fff;
 }
 

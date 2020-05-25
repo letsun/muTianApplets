@@ -264,6 +264,14 @@ Page({
     })
   },
 
+  //跳到webview页面
+  webview(e){
+    var href = e.currentTarget.dataset.href;
+    wx.navigateTo({
+      url: '../../webview/webview?href='+href,
+    })
+  },
+
   onHide() {
     let that = this;
     that.setData({

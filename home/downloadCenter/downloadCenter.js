@@ -129,14 +129,19 @@ Page({
     let that = this;
     let downloadCenterList = that.data.downloadCenterList
     if (downloadCenterList.buyStatus == 0) {
-      downloadCenterList.buyStatus = 2
+      downloadCenterList.buyStatus = 2;
+      that.setData({
+        downloadCenterList: downloadCenterList
+      })
+      that.addOrDelete(1, '')
     } else if (downloadCenterList.buyStatus == 2) {
-      downloadCenterList.buyStatus = 0
+      downloadCenterList.buyStatus = 0;
+      that.setData({
+        downloadCenterList: downloadCenterList
+      })
+      that.addOrDelete(1, '')
     }
-    that.setData({
-      downloadCenterList: downloadCenterList
-    })
-    that.addOrDelete(1, '')
+
   },
 
 
@@ -148,15 +153,21 @@ Page({
     let produceBatchId = downloadCenterList.batchList[index].produceBatchId;
 
     if (downloadCenterList.batchList[index].buyStatus == 0) {
-      downloadCenterList.batchList[index].buyStatus = 2
+      downloadCenterList.batchList[index].buyStatus = 2;
+      that.setData({
+        downloadCenterList: downloadCenterList
+      })
+  
+      that.addOrDelete(2, produceBatchId)
     } else if (downloadCenterList.batchList[index].buyStatus == 2) {
-      downloadCenterList.batchList[index].buyStatus = 0
+      downloadCenterList.batchList[index].buyStatus = 0;
+      that.setData({
+        downloadCenterList: downloadCenterList
+      })
+  
+      that.addOrDelete(2, produceBatchId)
     }
-    that.setData({
-      downloadCenterList: downloadCenterList
-    })
 
-    that.addOrDelete(2, produceBatchId)
   },
 
   //添加购物车

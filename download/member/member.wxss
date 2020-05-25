@@ -16,12 +16,15 @@
 .uinfo-photo {
     width: 20%;
     text-align: center;
+    align-self: center;
 }
 
-.uinfo-photo image {
+.uinfo-photo-image {
     max-height: 100rpx;
     max-width: 100rpx;
     border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
 }
 
 .uinfo-text {

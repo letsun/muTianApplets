@@ -35,8 +35,16 @@ Page({
     }, res => {
       let customerDetail = res.data.data;
       let indexa = that.data.indexa;
-      let endTime = customerDetail.endTime.split(' ');
-      console.log(endTime[0])
+
+
+      if (customerDetail.endTime!=null) {
+        let endTime = customerDetail.endTime.split(' ');
+        that.setData({
+          endTime:endTime[0]
+        })
+      }
+      
+
 
       if (res.data.data.levelUp!='') {
         var nowLevelConfigId = res.data.data.levelUp[indexa].id
@@ -46,7 +54,7 @@ Page({
       that.setData({
         customerDetail: customerDetail,
         nowLevelConfigId: nowLevelConfigId,
-        endTime:endTime[0]
+        
       })
     })
   },

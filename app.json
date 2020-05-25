@@ -13,7 +13,7 @@
     "download/download/download",
     "download/orderList/orderList",
     "download/member/member",
-    "batchList/batchList"
+    "webview/webview"
   ],
   "window": {
     "backgroundTextStyle": "light",

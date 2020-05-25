@@ -1,7 +1,7 @@
 <!-- home/home/home.wxml -->
 <view class="container">
 	<swiper class="swiper" autoplay="{{autoplay}}" interval="3000" circular="true" indicator-dots="true" indicator-active-color="#FE6A00" indicator-color="#fff">
-		<swiper-item class="swiper-item" wx:for="{{banner}}" wx:key="xx">
+		<swiper-item class="swiper-item" wx:for="{{banner}}" data-href="{{item.href}}" wx:key="xx" bindtap="webview">
 			<image src="{{item.url}}" />
 		</swiper-item>
 	</swiper>
@@ -50,7 +50,7 @@
 			<view class="cooperation-title-right" bindtap="more">更多></view>
 		</view>
 		<view class="cooperation-con">
-			<view class="cooperation-con-item" data-index="{{index}}" bindtap="productDetaila" wx:for="{{joinCorporation}}" wx:if="{{index<4}}" wx:key="xxx" >
+			<view class="cooperation-con-item" data-index="{{index}}" bindtap="productDetaila" wx:for="{{joinCorporation}}" wx:if="{{index<4}}" wx:key="xxx">
 				<image class="" src="https://qdwzvue-1254182596.cos.ap-guangzhou.myqcloud.com/qdwzAct/muTianApplets/1_6.png"></image>
 				<text>{{item.name}}</text>
 			</view>
