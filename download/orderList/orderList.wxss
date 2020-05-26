@@ -27,12 +27,18 @@
 
 .order-status {
     width: 30%;
-    text-align: right;
+    justify-content: flex-end;
+    display: flex;
     color: #666;
 }
 
 .statusColor {
     color: red;
+}
+
+.cancel {
+    margin-left: 20px;
+    color: #FAA84F;
 }
 
 .con-item-con {

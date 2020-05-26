@@ -38,7 +38,7 @@ Page({
             orderList: orderList.concat(res.data.data.orderList)
           })
         } else {
-          common.showToast('没有更多数据了', 'none', res => {})
+          common.showToast('没有更多数据了', 'none', res => { })
         }
         wx.hideLoading()
       }
@@ -48,7 +48,7 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
     let that = this;
     that.setData({
       pageNo: that.data.pageNo + 1
@@ -61,52 +61,45 @@ Page({
     let that = this;
     let index = e.currentTarget.dataset.index;
     let orderList = that.data.orderList;
-    if (orderList[index].payStatus==1) {
+    if (orderList[index].payStatus == 1) {
       wx.navigateTo({
         url: '../../home/downloadDetail/downloadDetail?orderId=' + orderList[index].orderId + '&type=' + 1,
       })
-    } else if (orderList[index].payStatus == 0){
-      wx.showModal({
+    } else if (orderList[index].payStatus == 0) {
+      let orderNo = orderList[index].orderNo;
+      that.unifiedorder(orderNo);
 
-        title: '提示',
-        confirmText: '支付购买',
-        cancelText: '取消订单',
-        content: '是否取消订单',
-        showCancel: true,
-        confirmColor: '#ffa33b',
-        success(res) {
-          if (res.confirm) {
-            let orderNo = orderList[index].orderNo;
-            that.unifiedorder(orderNo);
-          } else if (res.cancel) {
-            wx.request({
-              method: "POST",
-              url: api.cancel,
-   
-              data: {
-                orderId:orderList[index].orderId,
-                customerId:app.globalData.customerId
-              },
-
-              success: res => {
-                if (res.data.status  ==1) {
-                  orderList[index].payStatus= 2;
-                  orderList[index].payStatusLabel = '已取消';
-                  that.setData({
-                    orderList:orderList
-                  })
-                }
-              },
-            })
-
-          }
-        }
-
-      })
-
-      // let orderNo = orderList[index].orderNo;
-      // that.unifiedorder(orderNo);
     }
+  },
+
+  //取消订单
+  cancel(e) {
+    let that = this;
+    let index = e.currentTarget.dataset.index;
+    let orderList = that.data.orderList;
+
+    common.showModal('提示', '是否取消订单', confirm => {
+      wx.request({
+        method: "POST",
+        url: api.cancel,
+
+        data: {
+          orderId: orderList[index].orderId,
+          customerId: app.globalData.customerId
+        },
+
+        success: res => {
+          if (res.data.status == 1) {
+            orderList[index].payStatus = 2;
+            orderList[index].payStatusLabel = '已取消';
+            that.setData({
+              orderList: orderList
+            })
+          }
+        },
+      })
+    }, cancel => { })
+
   },
 
   //微信支付
@@ -128,11 +121,11 @@ Page({
   //拉起微信支付
   isPlay() {
     let that = this;
-    let unifiedorder = that.data.unifiedorder;  
+    let unifiedorder = that.data.unifiedorder;
     wx.requestPayment({
       timeStamp: unifiedorder.timeStamp,
       nonceStr: unifiedorder.nonceStr,
-      package:'prepay_id='+ unifiedorder.prepayId,
+      package: 'prepay_id=' + unifiedorder.prepayId,
       signType: unifiedorder.signType,
       paySign: unifiedorder.paySign,
       success(reg) {

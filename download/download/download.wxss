@@ -154,6 +154,11 @@
 
 .order-con-item {
   display: flex;
+  padding: 10px 0;
+  align-items: center;
+}
+.after {
+  padding: 0;
 }
 
 .order-con-item:first-child {
@@ -166,8 +171,7 @@
 
 .order-con-item-text {
   width: 20%;
-    text-align: center;
-  line-height: 80rpx;
+  text-align: center;
 }
 
 .order-con-item-text:first-child {
@@ -177,6 +181,11 @@
 
 .color {
   color:red;
+}
+
+.cancel {
+
+  color: #FAA84F;
 }
 
 .tfooter {

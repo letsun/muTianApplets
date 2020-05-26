@@ -1,21 +1,27 @@
 <!-- download/orderList/orderList.wxml -->
 <view class="container">
-    <view class="con">
-        <view class="con-item" wx:for="{{orderList}}" wx:key="xxx"  data-index="{{index}}" bindtap="btn">
-            <view class="con-item-title">
-                <view class="order-time">下单时间:{{item.createDate}}</view>
-                <view class="order-status {{item.payStatus?0:'statusColor'}}">{{item.payStatusLabel}}</view>
-            </view>
-            <view class="con-item-con">
-                <view class="con-item-con-item">
-                    <view class="con-item-con-key">订单内容</view>
-                    <view class="con-item-con-value">{{item.content}}</view>
-                </view>
-                <view class="con-item-con-item">
-                    <view class="con-item-con-key">订单金额</view>
-                    <view class="con-item-con-value">￥{{item.totalPrice}}</view>
-                </view>
-            </view>
-        </view>
-    </view>
+	<view class="con">
+		<view class="con-item" wx:for="{{orderList}}" wx:key="xxx" data-index="{{index}}" bindtap="btn">
+			<view class="con-item-title">
+				<view class="order-time">下单时间:{{item.createDate}}</view>
+                
+				<view class="order-status {{item.payStatus?'':'statusColor'}}">			
+                    <view class="{{item.payStatus?'':'color'}}">                
+                    {{item.payStatusLabel}}
+                    </view>
+                    <view class="cancel" catchtap="cancel" data-index="{{index}}" wx:if="{{item.payStatus==0}}">取消</view>
+				</view>
+			</view>
+			<view class="con-item-con">
+				<view class="con-item-con-item">
+					<view class="con-item-con-key">订单内容</view>
+					<view class="con-item-con-value">{{item.content}}</view>
+				</view>
+				<view class="con-item-con-item">
+					<view class="con-item-con-key">订单金额</view>
+					<view class="con-item-con-value">￥{{item.totalPrice}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
 </view>

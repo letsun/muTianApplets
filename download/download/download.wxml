@@ -59,11 +59,14 @@
 				<view class="order-con-item-text">订单内容</view>
 				<view class="order-con-item-text">状态</view>
 			</view>
-			<view class="order-con-item" wx:for="{{dowlist.orderList}}" wx:key="xxx" data-index="{{index}}" bindtap="btn">
+			<view class="order-con-item {{item.payStatus?0:'after'}}" wx:for="{{dowlist.orderList}}" wx:key="xxx" data-index="{{index}}" bindtap="btn">
 				<view class="order-con-item-text">{{item.createDate}}</view>
 				<view class="order-con-item-text">￥{{item.totalPrice}}</view>
 				<view class="order-con-item-text">{{item.content}}</view>
-				<view class="order-con-item-text {{item.payStatus?0:'color'}}">{{item.payStatusLabel}}</view>
+				<view class="order-con-item-text">
+					<view class="{{item.payStatus?0:'color'}}">{{item.payStatusLabel}}</view>
+					<view class="cancel" catchtap="cancel" data-index="{{index}}" wx:if ="{{item.payStatus==0}}">取消</view>
+				</view>
 			</view>
 
 		</view>

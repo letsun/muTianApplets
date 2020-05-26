@@ -110,46 +110,42 @@ Page({
       })
     } else if (orderList[index].payStatus == 0) {
 
-      wx.showModal({
-
-        title: '提示',
-        confirmText: '支付购买',
-        cancelText: '取消订单',
-        content: '是否取消订单',
-        showCancel: true,
-        confirmColor: '#ffa33b',
-        success(res) {
-          if (res.confirm) {
-            let orderNo = orderList[index].orderNo;
-            that.unifiedorder(orderNo);
-          } else if (res.cancel) {
-            wx.request({
-              method: "POST",
-              url: api.cancel,
-   
-              data: {
-                orderId:orderList[index].orderId,
-                customerId:app.globalData.customerId
-              },
-
-              success: res => {
-                if (res.data.status  ==1) {
-                  let dowlist = that.data.dowlist
-                  dowlist.orderList[index].payStatus= 2;
-                  dowlist.orderList[index].payStatusLabel = '已取消';
-                  that.setData({
-                    dowlist:dowlist
-                  })
-                }
-              },
-            })
-
-          }
-        }
-
-      })
+      let orderNo = orderList[index].orderNo;
+      that.unifiedorder(orderNo)
 
     }
+  },
+
+
+  //取消订单
+  cancel(e){
+    let that = this;
+    let index = e.currentTarget.dataset.index;
+    let orderList = that.data.dowlist.orderList;
+
+    common.showModal('提示','是否取消订单',confirm=>{
+      wx.request({
+        method: "POST",
+        url: api.cancel,
+  
+        data: {
+          orderId:orderList[index].orderId,
+          customerId:app.globalData.customerId
+        },
+  
+        success: res => {
+          if (res.data.status  ==1) {
+            let dowlist = that.data.dowlist
+            dowlist.orderList[index].payStatus= 2;
+            dowlist.orderList[index].payStatusLabel = '已取消';
+            that.setData({
+              dowlist:dowlist
+            })
+          }
+        },
+      })
+    },cancel=>{})
+
   },
 
   //微信支付
