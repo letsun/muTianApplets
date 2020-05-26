@@ -66,8 +66,46 @@ Page({
         url: '../../home/downloadDetail/downloadDetail?orderId=' + orderList[index].orderId + '&type=' + 1,
       })
     } else if (orderList[index].payStatus == 0){
-      let orderNo = orderList[index].orderNo;
-      that.unifiedorder(orderNo);
+      wx.showModal({
+
+        title: '提示',
+        confirmText: '支付购买',
+        cancelText: '取消订单',
+        content: '是否取消订单',
+        showCancel: true,
+        confirmColor: '#ffa33b',
+        success(res) {
+          if (res.confirm) {
+            let orderNo = orderList[index].orderNo;
+            that.unifiedorder(orderNo);
+          } else if (res.cancel) {
+            wx.request({
+              method: "POST",
+              url: api.cancel,
+   
+              data: {
+                orderId:orderList[index].orderId,
+                customerId:app.globalData.customerId
+              },
+
+              success: res => {
+                if (res.data.status  ==1) {
+                  orderList[index].payStatus= 2;
+                  orderList[index].payStatusLabel = '已取消';
+                  that.setData({
+                    orderList:orderList
+                  })
+                }
+              },
+            })
+
+          }
+        }
+
+      })
+
+      // let orderNo = orderList[index].orderNo;
+      // that.unifiedorder(orderNo);
     }
   },
 
