@@ -64,7 +64,7 @@
 				<view class="order-con-item-text">￥{{item.totalPrice}}</view>
 				<view class="order-con-item-text">{{item.content}}</view>
 				<view class="order-con-item-text">
-					<view class="{{item.payStatus?0:'color'}}">{{item.payStatusLabel}}</view>
+					<view class="{{item.payStatus?'':'color'}}">{{item.payStatusLabel}}</view>
 					<view class="cancel" catchtap="cancel" data-index="{{index}}" wx:if ="{{item.payStatus==0}}">取消</view>
 				</view>
 			</view>

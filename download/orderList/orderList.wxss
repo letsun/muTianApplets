@@ -33,12 +33,21 @@
 }
 
 .statusColor {
-    color: red;
+    
+    padding: 0 5rpx;
+    border-radius: 10rpx;
+    border: 1px solid red;
+    color:red;
 }
 
 .cancel {
-    margin-left: 20px;
+    padding: 0 5rpx;
+    margin-left: 20rpx;
+    border-radius: 10rpx;
+    border: 1px solid #FAA84F;
     color: #FAA84F;
+    color: #FAA84F;
+    
 }
 
 .con-item-con {

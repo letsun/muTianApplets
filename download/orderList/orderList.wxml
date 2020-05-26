@@ -5,8 +5,8 @@
 			<view class="con-item-title">
 				<view class="order-time">下单时间:{{item.createDate}}</view>
                 
-				<view class="order-status {{item.payStatus?'':'statusColor'}}">			
-                    <view class="{{item.payStatus?'':'color'}}">                
+				<view class="order-status ">			
+                    <view class="{{item.payStatus?'':'statusColor'}}">                
                     {{item.payStatusLabel}}
                     </view>
                     <view class="cancel" catchtap="cancel" data-index="{{index}}" wx:if="{{item.payStatus==0}}">取消</view>
