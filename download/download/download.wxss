@@ -180,6 +180,7 @@
 
 
 .color {  
+  margin-top: 10px;
   padding: 10rpx 0;
   border-radius: 10rpx;
   border: 1px solid red;
@@ -188,10 +189,11 @@
 }
 
 .cancel {
+  margin-bottom: 10px;
   padding: 10rpx 0;
-  border-radius: 10rpx;
+  /* border-radius: 10rpx;
   border: 1px solid #FAA84F;
-  color: #FAA84F;
+  color: #FAA84F; */
 }
 
 .tfooter {

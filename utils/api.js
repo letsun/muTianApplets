@@ -1,7 +1,8 @@
 //var dev = 'http://192.168.1.68:8080/mtkj-mobile';
 var dev = 'http://192.168.1.11:8080/mtkj-mobile';//本地
 var test = 'https://mut.lxcyhd.com';//测试
-var ip = test;
+var pro  = 'https://sqt.pd-kj.com/';
+var ip = pro;
 
 var api = {
   ip:ip, //下载地址
